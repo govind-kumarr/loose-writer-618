@@ -7,3 +7,9 @@ Member 1 - Mohan M
 Member 2 - Shivaji Pandurang Jadhav
 Member 3 - Mukul
 Member 4 - Preeti Raj
+
+
+Tasks - 
+Govind - HomePage Login SignUP
+Mukul - Product Page
+Shivaji - 

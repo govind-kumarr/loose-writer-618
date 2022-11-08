@@ -12,4 +12,6 @@ Member 4 - Preeti Raj
 Tasks - 
 Govind - HomePage Login SignUP
 Mukul - Product Page
-Shivaji - 
+Shivaji - CartPage and Checkout Functionality
+Mohan M - LabTest Page
+

@@ -1,0 +1,13 @@
+.nav{
+    height:50px;
+    background-color: #ff6f61;
+    color:white;
+    font-size:20px;
+}
+.foot{
+    height:500px;
+    background-color: #fffcf8;
+    color:black;
+    margin-top: 500px;
+    font-size:40px;
+}

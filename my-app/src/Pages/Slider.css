@@ -2,10 +2,9 @@
     width:100%;
     margin:auto;
     
-}
+} 
 .offer_slider{
     display: flex;
-    background-color: #e9f5fe;
     
 }
 .offer_slider>div{
@@ -20,4 +19,4 @@
 .second>div{
     height:100%;
     margin:0;
-}
+} 

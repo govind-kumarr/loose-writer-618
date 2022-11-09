@@ -53,8 +53,8 @@ class Slider extends Component {
       placeOn: "middle-inside",
       style: {
         left: {
-          height: "50px",
-          width: "40px",
+          height: "100px",
+          width: "60px",
           color: "black",
           margin: "0",
           fontSize: "30px",
@@ -62,19 +62,17 @@ class Slider extends Component {
           opacity: "1",
           borderRadius: "50%",
           fontWeight: "1000",
-          marginLeft:'40px'
         },
         right: {
-          height: "50px",
-          width: "40px",
+          height: "100px",
+          width: "60px",
           color: "balck",
           margin: "0",
-          fontSize: "30px",
+          fontSize: "40px",
           background: "white",
           opacity: "1",
           borderRadius: "50%",
           fontWeight: "1000",
-          marginRight:'40px'
         },
       },
     };

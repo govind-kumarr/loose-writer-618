@@ -1,5 +1,5 @@
 import React from 'react'
-import './labpage.css'
+import './LabPage.css'
 import image from '../assets/images/Poster.png'
 const LabPage = () => {
   return (
@@ -8,13 +8,8 @@ const LabPage = () => {
       <div className="nav">SubNavbar</div>
         <div>
         Labpage
-        <img src={image} alt="poster" style={{width:"100%"}}/>
-
-
-
-
+        <img src={image} alt="Poster" style={{width:'100%'}}/>
         </div>  
-      <div className="foot">Footer</div>
     </div>
   )
 }

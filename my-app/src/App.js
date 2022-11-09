@@ -1,5 +1,6 @@
 
 import './App.css';
+import Footer from './Components/Footer';
 import LabPage from './Pages/LabPage';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
      
      <LabPage />
-     
+     <Footer />
     </div>
   );
 }

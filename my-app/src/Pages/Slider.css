@@ -1,0 +1,22 @@
+.offers_container{
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.offer_slider{
+    display: flex;
+    background-color: #f1f1f1;
+}
+.offer_slider>div{
+    width: 50%;
+    text-align: center;
+   
+}
+.second>div>img{
+    height:100%;
+}
+.second>div{
+    height:100%;
+    margin:0;
+}

@@ -1,7 +1,8 @@
-import React from "react";
+import { combineReducers, legacy_createStore } from "redux";
+import { reducer as AuthReducer } from "./AuthReducer/reducer";
 
-const store = () => {
-  return <div>store</div>;
-};
+const rootReducer = combineReducers({ AuthReducer });
 
-export default store;
+const store = legacy_createStore(rootReducer);
+
+export { store };

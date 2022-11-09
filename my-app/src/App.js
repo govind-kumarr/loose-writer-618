@@ -1,5 +1,6 @@
 
 
+
 import './App.css';
 import AllRoutes from './AllRoutes/AllRoutes';
 import Footer from './Components/Footer';
@@ -15,7 +16,6 @@ function App() {
      <Footer />
 
     </div>
-  );
-}
+  )}
 
-export default App;
+  export default App;

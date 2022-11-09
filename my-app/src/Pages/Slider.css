@@ -1,16 +1,17 @@
 .offers_container{
     width:100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin:auto;
+    
 }
 .offer_slider{
     display: flex;
-    background-color: #f1f1f1;
+    background-color: #e9f5fe;
+    
 }
 .offer_slider>div{
     width: 50%;
     text-align: center;
+    margin:0;
    
 }
 .second>div>img{

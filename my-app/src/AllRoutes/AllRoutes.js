@@ -7,7 +7,7 @@ import Error from "../Pages/Error";
 import HomePage from "../Pages/HomePage";
 import Login from "../Pages/Login";
 import ProductPage from "../Pages/ProductPage";
-import SignUp from "../Pages/SignUp";
+import SignUP from "../Pages/SignUp.js";
 
 const AllRoutes = () => {
   return (
@@ -15,7 +15,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUP />} />
         <Route path="/admin-panel" element={<AdminPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />

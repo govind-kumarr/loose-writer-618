@@ -1,3 +1,9 @@
+import { useEffect,useState } from "react";
+import AddProducts from "../AdminSide/AddProducts";
+import Check from "../AdminSide/Check";
+ 
+
+
 const products = [
   {
     id: 1,

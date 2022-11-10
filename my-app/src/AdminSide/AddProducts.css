@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.add-product-wrapper{
+    border: 1px solid green;
+    
+    text-align: center;
+    width: max-content;
+    align-self: center;
+    margin: auto;
+}

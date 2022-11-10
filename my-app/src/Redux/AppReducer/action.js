@@ -11,7 +11,7 @@ const getProductsRequest = () =>{
 const getProducts = (queryParams) => (dispatch) => {
     dispatch(getProductsRequest());
 
-    return axios.get("http://localhost:8080/products?_limit=10", queryParams)
+    return axios.get("http://localhost:8080/products", queryParams)
     .then(r=> {
         dispatch({
             type:types.GET_PRODUCTS_RECORD_SUCCESS,

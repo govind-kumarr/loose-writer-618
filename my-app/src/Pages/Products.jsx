@@ -14,7 +14,6 @@ export default function Products() {
   <Filters />
   <ProductsGrid />
 </Flex>
-
 <Pagination />
 </Box>
 

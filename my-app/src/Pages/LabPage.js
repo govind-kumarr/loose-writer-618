@@ -1,7 +1,7 @@
 import React from 'react'
-import './LabPage.css'
+import './labpage.css'
 import image from '../assets/images/Poster.png'
-import Slider from './Silder'
+import Slider from './Slider'
 const LabPage = () => {
   return (
     <div >

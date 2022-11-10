@@ -1,0 +1,57 @@
+.ptest{
+    width:100%;
+    margin:auto;
+    
+}
+.flex{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    gap:0px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+}
+.flex3{
+    gap:0px;
+    width:100%;
+    box-shadow: 0.5px 0.5px 3px grey;
+}
+
+.flex4{
+    margin:0;
+    width:100%;
+    margin:15px;
+}
+.flex2{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:0px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+}
+.flex1{
+    display:flex;
+    flex-direction: row;
+    gap:25px;
+    width:100%;
+    margin:10px 0 ;
+    font-size:17px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 20px;
+}
+.p{
+    text-align: left;
+    font-size: 22px;
+    margin:10px;
+    margin-left:20px;
+    font-weight: 700;
+    color:grey;
+}
+.head{
+    font-size: 17px;
+}

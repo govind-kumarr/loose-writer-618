@@ -1,0 +1,41 @@
+.fl{
+    width:100%;
+    /* background-color: rgb(182, 177, 177); */
+    margin:50px 0;
+}
+.flex5{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    /* border:1px solid red; */
+    font-size: 22px;
+    font-weight: 700;
+    color:grey;
+    margin:20px;
+}
+.org{
+    color:#ff6f61;
+    font-size: 18px;
+}
+.p1>div:first-child{
+    border:1px solid grey;
+    box-shadow: 0.5px 0.5px 3px grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.p1>div:last-child{
+    overflow: hidden;
+}
+.p1>div>img{
+   width:200px;
+   height:120px; 
+   margin:auto;
+}
+.p1>div>p{
+    font-size:16px;
+    color:black;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 10px;
+    overflow: hidden;
+}

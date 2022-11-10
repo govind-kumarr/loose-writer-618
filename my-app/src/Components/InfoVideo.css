@@ -1,0 +1,27 @@
+
+.flex6{
+    display:flex;
+    gap:100px;
+    box-shadow: 0.5px 0.5px 3px grey;
+    width:100%;
+    margin: 30px 0;
+}
+
+.info{
+    text-align: left;
+    padding:20px;
+    padding-left: 20px;
+}
+.info>h3{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 30px;
+    
+  }
+  .info>p{
+    line-height:23px;
+    color:#757575;
+    vertical-align:baseline;
+    letter-spacing:normal;
+  }

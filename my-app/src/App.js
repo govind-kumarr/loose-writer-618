@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+
+
+
 import './App.css';
-import Products from "./Pages/Products"
+import AllRoutes from './AllRoutes/AllRoutes';
+import Footer from './Components/Footer';
+import LabPage from './Pages/LabPage';
 
 function App() {
   return (
- <Products/> 
-  );
-}
+    <div className="App">
+     <AllRoutes/>
+     <LabPage />
+     <Footer />
 
-export default App;
+    </div>
+  )}
+
+  export default App;

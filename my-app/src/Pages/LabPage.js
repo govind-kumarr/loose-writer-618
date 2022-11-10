@@ -1,15 +1,17 @@
 import React from 'react'
-import './LabPage.css'
+import './labpage.css'
 import image from '../assets/images/Poster.png'
+import Slider from './Slider'
 const LabPage = () => {
   return (
-    <div>
+    <div >
       <div className="nav">Navbar</div>
       <div className="nav">SubNavbar</div>
-        <div>
-        Labpage
-        <img src={image} alt="Poster" style={{width:'100%'}}/>
+        <div className='lab'>
+        <Slider />
+        <h3 className='textLeft'>Book A Lab Test</h3>
         </div>  
+        <img src={image} alt="Poster" className='Poster' />
     </div>
   )
 }

@@ -1,28 +1,30 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import "./AddProducts.css";
 import styled from "styled-components";
 import { products } from '../data/ProductsData';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProd } from '../Redux/AdminPanel/action';
+import { getLocalData, saveData } from '../Utils/localStorageData';
 
 const startData={
-      title: "",
-      subTitle: "",
-      price: "",
-      category: "",
-      type: "",
-      image: "",
-      rate: "",
-      count: "",
-      off: "",
-      quantity:"",
-      max_unit: "",
+      title: "x",
+      subTitle: "y",
+      price: "5",
+      category: "5",
+      type: "5",
+      image: "5",
+      rate: "5",
+      count: "5",
+      off: "5",
+      quantity:"5",
+      max_unit: "5",
 }
 const AddProducts = () => {
   const [data,setData]=useState(startData);
   const {title, subTitle,price, category,type, image,rate, count,off,quantity,max_unit}=data;
   const dispatch=useDispatch();
-  
+   const produ=useSelector((store)=>{return store.AdminReducer.prodo});
+  console.log(produ,"produ in add product")
  
   const handleChange=(e)=>{
         const {name,value,type}=e.target;
@@ -32,48 +34,48 @@ const AddProducts = () => {
             [name]:val
         })
   }
- //console.log(data,"data")
- //console.log(products)
- useEffect(()=>{
-    // if(products.length===1001){
-    //     return products;
-    //  }
-    dispatch(addProd([{id:5,title:"Mnnnnn"}]))
- },[])
  
-
- 
- 
-
   const handleSubmit=(e)=>{
     e.preventDefault();
       
       if(title && subTitle && price && category && type && image && rate && count && off && quantity && max_unit){
-        console.log(data,"data sumbit")
+        
+        const dumm=getLocalData("addedProd")||[];
+        console.log(dumm,"dumm")
+       
+        const id=dumm.length+1;
+        let pdata=data;
+        pdata={...pdata,id:id+1}
+        //console.log(pdata,"data sumbit");
+        const payload=[pdata];
+        dispatch(addProd(payload));
+        setData(startData)
       }else{
           alert("Please fill all the boxes");
-        setData(startData)
       }
   }
-
+ 
+  
+  
   return (
-    <div>
+    <div className='entire'>
         <h1>AddProducts</h1>
+        <NoOfProducts>Total No of Products:{produ.length}</NoOfProducts>
         <div>
             <div className='add-product-wrapper'>
                 <form onSubmit={handleSubmit}>
                     <FormDiv className='form-element-div'>
-                        <Label className='form-label'>Product Title</Label>
+                        <Label className='form-label'>Product Title :- </Label>
                         <Input className="form-input" type="text" name="title" value={title} onChange={(e)=>handleChange(e)} placeholder='title'/>
                     </FormDiv>
                     <FormDiv>
-                        <label>Product Sub-Title</label>
-                        <input type="text" value={subTitle} name="subTitle" onChange={(e)=>handleChange(e)} placeholder='subTitle'/>
+                        <Label>Product Sub-Title :- </Label>
+                        <Input type="text" value={subTitle} name="subTitle" onChange={(e)=>handleChange(e)} placeholder='subTitle'/>
                     </FormDiv>
-                    <div>
-                        <label>Price</label>
-                        <input type="Number" value={price} name="price" onChange={(e)=>handleChange(e)} placeholder='price'/>
-                    </div>
+                    <FormDiv>
+                        <Label>Price</Label>
+                        <Input type="Number" value={price} name="price" onChange={(e)=>handleChange(e)} placeholder='price'/>
+                    </FormDiv>
                     <div>
                         <label>Category</label>
                         <select value={category} name="category" onChange={(e)=>handleChange(e)}placeholder='category'>
@@ -118,6 +120,7 @@ const AddProducts = () => {
                 </form>
             </div>
         </div>
+
     </div>
   )
 }
@@ -128,6 +131,14 @@ const FormDiv=styled.div`
     display:flex;
     padding:20px;
     margin:auto;
+    @media all and (min-width:0px) and (max-width:481px){
+        display:flex;
+        flex-direction:column;
+    }
+    @media all and (min-width:481px) and (max-width:768px){
+        display:flex;
+        flex-direction:column;
+    }
     
     
 `
@@ -136,11 +147,30 @@ const Input=styled.input`
     border:1px solid blue;
     flex:1;
     text-align:center;
+    font-size:22px;
    
 `
 const Label=styled.label`
     border:1px solid gray;
-    margin-right:20px;
+    margin-right:22px;
+    text-align:center;
+    font-size:20px;
+    color:green;
+    width:50%;
+    @media all and (min-width:481px) and (max-width:768px){
+        align-self:center;
+    }
+`
+const NoOfProducts=styled.div`
+    border:1px solid green;
+    text-align:left;
+    @media all and (min-width:0px) and (max-width:481px){
+        text-align:center;
+        align-self:center;
+    }
+    @media all and (min-width:481px) and (max-width:768px){
+        text-align:center;
+    }
 `
 
 export default AddProducts;

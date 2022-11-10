@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { ProductsData } from '../data/ProductsData';
 import { products } from '../data/ProductsData';
-import { addProd } from '../Redux/AdminPanel/action';
+
 const Check = (props) => {
     const {prod}=props;
     console.log(prod,"prod in check")

@@ -5,58 +5,44 @@ import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useSearchParams } from 'react-router-dom'
 import { getProducts } from '../Redux/AppReducer/action'
 import { Link } from "react-router-dom"
+import Sorting from './Sorting'
 
 export default function ProductsGrid() {
 
   const dispatch = useDispatch()
-  const productsRecord = useSelector((store) => store.AppReducer.productsRecord)
-  const [searchParams] = useSearchParams();
-  const location = useLocation();
+  const productsRecord  = useSelector((store)=>store.AppReducer.productsRecord)
 
-  useEffect(() => {
-    if (location || productsRecord.length == 0) {
-      const category = searchParams.getAll("genre");
-      const queryParams = {
-        params: {
-          // _limit:12,
-          // _page:10,
-          category: category,
-          _sort: searchParams.get("sortBy") && "price",
-          _order: searchParams.get("sortBy")
 
-        }
-      }
-      console.log(category)
-      dispatch(getProducts(queryParams));
+  useEffect(()=>{
+  const queryParams={
+    params:{
+      // genre: genre,
+      
     }
+  }
+  dispatch(getProducts(queryParams));
 
-  }, [location])
+  },[])
+
+console.log(" music records = ",productsRecord)
 
 
   return (
     <>
 
       <Box w="full" p='4'>
-
         <Box display={{ md: 'flex' }} mb="5">
           <Text fontSize={"2xl"} textAlign={"center"}> Tejasya Ayurveda </Text>
           <Spacer />
-          <Text mt="auto" mb="auto" fontSize={"md"} textAlign={"center"} mr="3"> Sort By </Text>
-          <Select maxW="200" minWidth={"100"} bg="white" ml="2" m="auto">
-            <option value='option1'>Relevance</option>
-            <option value='option1'>Average Customer Rating</option>
-            <option value='option1'>Price: Low to High</option>
-            <option value='option1'>Price: High to Low </option>
-            <option value='option1'>Discount</option>
-          </Select>
+          <Sorting />
         </Box>
 
-        <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing='20px'>
+        <SimpleGrid columns = {[1, 1, 2, 3, 4]} spacing='20px'>
           {productsRecord?.map((el) => (
             <ProductCard key={el.id} item={el} />
           ))}
-
         </SimpleGrid>
+      
       </Box>
     </>
   )

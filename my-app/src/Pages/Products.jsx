@@ -17,7 +17,6 @@ export default function Products() {
 <Pagination />
 </Box>
 
-
     </>
   )
 }

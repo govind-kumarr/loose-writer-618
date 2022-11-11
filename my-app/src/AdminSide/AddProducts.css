@@ -5,12 +5,27 @@
 }
 .add-product-wrapper{
     border: 1px solid green;
-    
     text-align: center;
     width: max-content;
     align-self: center;
     margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .entire{
     border:1px solid red;
+    
 }
+
+.navbar-cart-count{
+    position: absolute;
+   
+    width: 20px;
+    height: 20px;
+     background-color: black; color: white;
+     padding: 1px;
+     text-align: center;
+      border-radius: 50%;
+       left: 198px; top: -8px; 
+}
+
+

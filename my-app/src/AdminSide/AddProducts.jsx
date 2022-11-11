@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addProd } from '../Redux/AdminPanel/action';
 import { getLocalData, saveData } from '../Utils/localStorageData';
 import { Link } from 'react-router-dom';
-import { Button, Alert, AlertIcon, AlertDescription,AlertTitle } from '@chakra-ui/react';
+import { Button, Alert, AlertIcon, AlertDescription,AlertTitle,Heading } from '@chakra-ui/react';
 import axios from 'axios';
+import { BasicUsage } from './Basic';
+
 
 
 
@@ -30,7 +32,7 @@ const AddProducts = () => {
     const dispatch = useDispatch();
     const produ = useSelector((store) => { return store.AdminReducer.prodo });
     const [allert, setallert] = useState(false);
-    
+    const [alert0,setAlert0]=useState(false);
 
    
     console.log(produ, "produ in add product")
@@ -64,12 +66,12 @@ const AddProducts = () => {
                 setallert(false)
             },2000)
         } else {
-            
-            alert("Please fill all the input fields")
-            
+            setAlert0(true);
         }
     }
-   
+   const handleClose=(()=>{
+       setAlert0(false);
+   })
 
     if (allert) {
         return (<Alert
@@ -91,21 +93,11 @@ const AddProducts = () => {
           </Alert>)
     }
 
-    useEffect(()=>{
-        // axios({
-        //     method:'delete',
-        //     url:'/products/101',
-        //     baseURL:'https://onemgfree-api-server.onrender.com',
-            
-        // }).then(r=>{
-        //     console.log(r.data,"data axios delte")
-        // })
-    },[])
-
+    
     return (
         <div className='entire'>
             
-            <h1>AddProducts</h1>
+            <Heading>AddProducts</Heading>
             <Top>
                 <TopDiv style={{ display: "flex", position: "relative" }}>
                     <NoOfProducts>Total No of Products :-</NoOfProducts>
@@ -115,7 +107,7 @@ const AddProducts = () => {
                     </Link>
                 </TopDiv>
             </Top>
-
+            <br/>
             <div>
                 <div className='add-product-wrapper'>
                     <form onSubmit={handleSubmit}>
@@ -173,7 +165,7 @@ const AddProducts = () => {
                             <Button className="buttone" _hover={{ backgroundColor: "cyan.400" }} style={{ textAlign: "center" }} pl={"10"} pt={"5"} pb={"5"} pr={"10"} colorScheme="teal" type="submit">ADD</Button>
                         </div>
                     </form>
-                    
+                    {alert0?<BasicUsage handleClose={handleClose}/>:""}
                 </div>
                 
             </div>
@@ -183,11 +175,12 @@ const AddProducts = () => {
 }
 
 const FormDiv = styled.div`
-    border:1px solid yellow;
+    border:0px solid yellow;
     
     display:flex;
     padding:20px;
     margin:auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     @media all and (min-width:0px) and (max-width:481px){
         display:flex;
         flex-direction:column;
@@ -218,7 +211,7 @@ const Input = styled.input`
     }
 `
 const Select = styled.select`
-    border:1px solid blue;
+    border:0px solid blue;
     flex:1;
     text-align:center;
     font-size:22px;
@@ -232,7 +225,7 @@ const Select = styled.select`
 //     font-size:22px;  
 // `
 const Label = styled.label`
-    border:1px solid gray;
+    border:0px solid gray;
     margin-right:22px;
     text-align:center;
     font-size:20px;
@@ -265,13 +258,13 @@ const NoOfProducts = styled.div`
 `
 
 const TopDiv = styled.div`
-border:1px solid pink;
+border:0px solid pink;
 width:max-content;
-
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 `
 const Top = styled.div`
-border:1px solid blue;
+border:0px solid blue;
 
 @media all and (min-width:0px) and (max-width:481px){
     display:flex;

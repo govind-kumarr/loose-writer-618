@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 .add-product-wrapper{
-    border: 1px solid green;
+    border: 0px solid green;
     text-align: center;
     width: max-content;
     align-self: center;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .entire{
     border:1px solid red;

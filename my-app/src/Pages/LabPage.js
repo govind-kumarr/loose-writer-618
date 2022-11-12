@@ -15,7 +15,7 @@ const LabPage = () => {
         <Carosel />
         <PopularTest />
         <img src={image} alt="Poster" className='Poster' />
-        {/* <HealthCheckup/> */}
+        <HealthCheckup/>
         <FeatureLab />
         <InfoVideo />
         <HappyCustomer />

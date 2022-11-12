@@ -89,15 +89,6 @@ const GalleryReact = () => {
               Lifestyle Habits
             </a>
           </li>
-          <li className="nav-item">
-            <a
-              className={active ? "nav-link" : "nav-link active"}
-              href="javascrip:0;"
-              onClick={() => setItems(Menu)}
-            >
-              All
-            </a>
-          </li>
           <li className="org">
             <a
               className={active ? "nav-link" : "nav-link active"}
@@ -119,22 +110,16 @@ const GalleryReact = () => {
             return (
               <div className="col-sm-4" id={id}>
                 <div class="card mb-3">
-                  <div class="row no-gutters">
-                    <div class="col-md-5">
-                      <img class="img-fluid" src={image} alt={name} />
-                    </div>
-                    <div class="col-md-7">
                       <div class="card-body">
-                        <h5 class="card-title">{name}</h5>
-                        <p class="card-text">{description}</p>
-                        <div class="d-flex justify-content-between">
-                          <div class="p-1">Price: {price}</div>
+                      <img class="img-fluid" src={image} alt={name} />
+                        <h5 class="card-title font-weight-bolder text-left">{name}</h5>
+                        <p class="card-text font-italic text-left">{description}</p>
+                        <div class="d-flex justify-content-between text-left">
+                          <div class="p-1 font-weight-bold text-left">{price} <del class="font-weight-normal text-secondary">₹6999</del></div>
                           <button type="button" className="btn btn-danger p-1">
                             Add to Cart
                           </button>
                         </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import "./AddProducts.css";
 import styled from "styled-components";
-import { products } from '../data/ProductsData';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { addProd } from '../Redux/AdminPanel/action';
+import { addProduct, getProducts } from '../Redux/AdminPanel/action';
 import { getLocalData, saveData } from '../Utils/localStorageData';
 import { Link } from 'react-router-dom';
 import { Button, Alert, AlertIcon, AlertDescription,AlertTitle,Heading } from '@chakra-ui/react';
 import axios from 'axios';
 import { BasicUsage } from './Basic';
+import { BasicAdded } from './BasicAdded';
+import RecentlyAdded from './RecentlyAdded';
 
 
 
@@ -19,7 +21,7 @@ const startData = {
     price: "5",
     category: "",
     type: "5",
-    image: "5",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfESPkZA4oTifLTyp_UuxhgFiAKD9m2UKwQ&usqp=CAU",
     rate: "5",
     count: "5",
     off: "5",
@@ -30,12 +32,22 @@ const AddProducts = () => {
     const [data, setData] = useState(startData);
     const { title, subTitle, price, category, type, image, rate, count, off, quantity, max_unit } = data;
     const dispatch = useDispatch();
-    const produ = useSelector((store) => { return store.AdminReducer.prodo });
+    const produ = useSelector((store) => { console.log(store,"store");return store.AdminReducer.products});
+    const isLoading=useSelector((store)=>store.AdminReducer.isLoading);
+    const isError=useSelector((store)=>store.AdminReducer.isError);
+
     const [allert, setallert] = useState(false);
     const [alert0,setAlert0]=useState(false);
 
    
-    console.log(produ, "produ in add product")
+   // console.log(produ, "products in add product")
+
+    useEffect(() => {
+        dispatch(getProducts).then(r=>{
+           // console.log(r,"in useEffect get")
+        });
+        //axios.delete(`https://onemgfree-api-server.onrender.com/products/109`)
+    }, [])
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
@@ -50,50 +62,38 @@ const AddProducts = () => {
         e.preventDefault();
 
         if (title && subTitle && price && category && type && image && rate && count && off && quantity && max_unit) {
-
-            const dumm = getLocalData("addedProd") || [];
-            //console.log(dumm, "dumm")
-
-            const id = dumm.length + 1;
-            let pdata = data;
-            pdata = { ...pdata, id: id + 1 }
-            //console.log(pdata,"data sumbit");
-            const payload = [pdata];
-            dispatch(addProd(payload));
+            
+            dispatch(addProduct(data)).then(r=>{
+                console.log(r.data,"r after add")
+                dispatch(getProducts).then(r=>{
+                    console.log(r.data,"after add get")
+                });
+               
+            });
             setData(startData);
-            setallert(true);
-            setTimeout(()=>{
-                setallert(false)
-            },2000)
+            
+           setallert(true);
+            
         } else {
             setAlert0(true);
         }
     }
    const handleClose=(()=>{
        setAlert0(false);
+       setallert(false);
    })
-
-    if (allert) {
-        return (<Alert
-            status='success'
-            variant='subtle'
-            flexDirection='column'
-            alignItems='center'
-            justifyContent='center'
-            textAlign='center'
-            height='200px'
-          >
-            <AlertIcon boxSize='40px' mr={0} />
-            <AlertTitle mt={4} mb={1} fontSize='lg'>
-              Product has been added successfully!
-            </AlertTitle>
-            <AlertDescription maxWidth='sm'>
-              Thanks for adding product.
-            </AlertDescription>
-          </Alert>)
+   
+    if(isLoading){
+        return (
+            <Heading>...Loading....</Heading>
+        )
     }
-
-    
+    if(isError){
+        return(
+            <Heading>OOps API is not working now!</Heading>
+        )
+    }
+   
     return (
         <div className='entire'>
             
@@ -139,7 +139,7 @@ const AddProducts = () => {
                         </FormDiv>
                         <FormDiv>
                             <Label>Image :-</Label>
-                            <Input type="text" value={image} name="image" onChange={(e) => handleChange(e)} placeholder='image' />
+                            <Input type="url" value={image} name="image" onChange={(e) => handleChange(e)} placeholder='image' />
                         </FormDiv>
                         <FormDiv>
                             <Label>Rate :-</Label>
@@ -162,11 +162,15 @@ const AddProducts = () => {
                             <Input type="Number" value={max_unit} name="max_unit" onChange={(e) => handleChange(e)} placeholder='max_unit' />
                         </FormDiv>
                         <div>
-                            <Button className="buttone" _hover={{ backgroundColor: "cyan.400" }} style={{ textAlign: "center" }} pl={"10"} pt={"5"} pb={"5"} pr={"10"} colorScheme="teal" type="submit">ADD</Button>
+                            <Button className="buttone" _hover={{ backgroundColor: "cyan.400" }} style={{ textAlign: "center" }} pl={"10"} pt={"7"} pb={"7"} pr={"10"} colorScheme="teal" type="submit">ADD</Button>
                         </div>
                     </form>
-                    {alert0?<BasicUsage handleClose={handleClose}/>:""}
+                    {alert0?<BasicUsage handleClose={handleClose} children={"Please fill all the input fields proprely"}/>:""}
+                    {allert?<BasicAdded handleClose={handleClose}/>:""}
+                    
                 </div>
+                <br/>
+                <RecentlyAdded/>
                 
             </div>
 
@@ -180,7 +184,8 @@ const FormDiv = styled.div`
     display:flex;
     padding:20px;
     margin:auto;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-items:center;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     @media all and (min-width:0px) and (max-width:481px){
         display:flex;
         flex-direction:column;
@@ -201,6 +206,7 @@ const Input = styled.input`
     font-size:22px;
     width:40%;
     border-radius:6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     @media all and (min-width:481px) and (max-width:768px){
         align-self:center;
         width:auto;
@@ -211,11 +217,15 @@ const Input = styled.input`
     }
 `
 const Select = styled.select`
-    border:0px solid blue;
+    border:1px solid blue;
     flex:1;
     text-align:center;
     font-size:22px;
     border-radius:6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    option{
+        color:green;
+    }
 `
 // const Button = styled.button`
 //     border:1px solid blue;
@@ -231,6 +241,7 @@ const Label = styled.label`
     font-size:20px;
     color:green;
     width:40%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     @media all and (min-width:481px) and (max-width:768px){
         align-self:center;
         width:auto;
@@ -260,6 +271,9 @@ const NoOfProducts = styled.div`
 const TopDiv = styled.div`
 border:0px solid pink;
 width:max-content;
+img{
+    margin-left:12px;
+}
 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 `

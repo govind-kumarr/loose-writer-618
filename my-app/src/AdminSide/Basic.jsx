@@ -7,11 +7,12 @@ import {
     ModalBody,
     ModalCloseButton,
     Button,
-  } from '@chakra-ui/react'
+  } from '@chakra-ui/react';
+  import {  Alert, AlertIcon, AlertDescription,AlertTitle,Heading } from '@chakra-ui/react';
 import { useState } from 'react';
 
 
-function BasicUsage({handleClose}) {
+function BasicUsage({handleClose,children}) {
     const [truth,setTruth]=useState(false);
     
     return (
@@ -22,7 +23,7 @@ function BasicUsage({handleClose}) {
             <ModalHeader></ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              Please fill all the input fields
+              {children}
             </ModalBody>
   
             <ModalFooter>

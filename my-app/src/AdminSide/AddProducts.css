@@ -12,20 +12,24 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .entire{
-    border:1px solid red;
-    
+    border:4px solid red;
+   
 }
 
 .navbar-cart-count{
     position: absolute;
    
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
      background-color: black; color: white;
      padding: 1px;
      text-align: center;
       border-radius: 50%;
        left: 198px; top: -8px; 
+}
+.buttone{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
 }
 
 

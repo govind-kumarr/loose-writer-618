@@ -232,7 +232,7 @@ const Select = styled.select`
 //     text-align:center;
 //     width:30%;
 //     color:blue;
-//     font-size:22px;  
+//     font-size:22px;  f
 // `
 const Label = styled.label`
     border:0px solid gray;

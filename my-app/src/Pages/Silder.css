@@ -1,0 +1,22 @@
+.offers_container{
+    width:100%;
+    margin:auto;
+    
+} 
+.offer_slider{
+    display: flex;
+    
+}
+.offer_slider>div{
+    width: 50%;
+    text-align: center;
+    margin:0;
+   
+}
+.second>div>img{
+    height:100%;
+}
+.second>div{
+    height:100%;
+    margin:0;
+} 

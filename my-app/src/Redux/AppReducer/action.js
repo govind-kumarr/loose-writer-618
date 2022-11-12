@@ -8,14 +8,23 @@ const getProductsRequest = () =>{
 }
 
 
-const getProducts = (queryParams) => (dispatch) => {
+const getProducts = (params ={}) => (dispatch) => {
     dispatch(getProductsRequest());
 
-    return axios.get("http://localhost:8080/products", queryParams)
+    return axios.get("http://localhost:8080/products", 
+    {params: {
+        category:params.category,
+        type: params.type,
+        _page: params.page,
+        _limit: params.limit,
+        _sort: params.sort,
+        _order: params.order
+      }})
     .then(r=> {
+        console.log(r)
         dispatch({
             type:types.GET_PRODUCTS_RECORD_SUCCESS,
-            payload:r.data
+            payload:r
         })
     })
     .catch(e=>{

@@ -1,40 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Input, Flex, Spacer, Box, Text, WrapItem, Checkbox } from '@chakra-ui/react'
 
-export default function Filters() {
+export default function Filters({setType, type, setCategory, category}) {
 
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [sortBy, setSortyBy] = useState(searchParams.get("sortBy") || "");
-    const [category, setCategory] = useState(searchParams.getAll("category") || []);
-
-    // product form
-    const [type, setType] = useState(searchParams.getAll("type") || []);
-
-    const handleFilter = (e) => {
-        const option = e.target.value;
-        //if the option is present in the category array, remove it,
-        // else add it to the category array.
-
-        let newCategory = [...category];
-        if (newCategory.includes(option)) {
-            //remove it
-            newCategory.splice(newCategory.indexOf(option), 1);
-        } else {
-            //add it
-            newCategory.push(option);
-        }
-        setCategory(newCategory);
-    };
-
-
-    useEffect(() => {
-        const params = {};
-        // params.limit=10
-        category && (params.genre = category);
-        sortBy && (params.sortBy = sortBy);
-        setSearchParams(params);
-    }, [category, setSearchParams, sortBy]);
 
     return (
         <>
@@ -48,11 +16,13 @@ export default function Filters() {
                     <WrapItem display={"block"} p="4">
                         <Text fontSize='md' as={"b"}>TOP BRANDS</Text>
                         <Input placeholder='Search Brands' />
-                        <Flex>
-                            <Checkbox size='sm' colorScheme='red'> Mamaearth  </Checkbox>
-                            <Spacer />
-                            <Text fontSize={"sm"}> 5 </Text>
-                        </Flex>
+                        {brands?.map((item) => (
+                            // onChange={(e)=>setType([...type, e.target.value])}
+                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
+                                <Spacer />
+                                {/* <Text fontSize={"sm"}> 5 </Text> */}
+                            </Flex>
+                        ))}
                     </WrapItem>
                 </Box>
 
@@ -62,21 +32,22 @@ export default function Filters() {
                         <Text fontSize='md' as={"b"}>DISCOUNT</Text>
                         <Flex>
                             <Checkbox size='sm' colorScheme='red'> Less Then 10%  </Checkbox> <Spacer />
-                            <Text fontSize={"sm"}> 0 </Text> </Flex>
+                            {/* <Text fontSize={"sm"}> 29 </Text>  */}
+                            </Flex>
 
                         <Flex> <Checkbox size='sm' colorScheme='red'> 10% and above  </Checkbox>
                             <Spacer />
-                            <Text fontSize={"sm"}> 0 </Text>
+                            {/* <Text fontSize={"sm"}> 31 </Text> */}
                         </Flex>
 
                         <Flex> <Checkbox size='sm' colorScheme='red'> 20% and above  </Checkbox>
                             <Spacer />
-                            <Text fontSize={"sm"}> 0 </Text>
+                            {/* <Text fontSize={"sm"}> 18 </Text> */}
                         </Flex>
 
                         <Flex> <Checkbox size='sm' colorScheme='red'> 30% and above  </Checkbox>
                             <Spacer />
-                            <Text fontSize={"sm"}> 0 </Text>
+                            {/* <Text fontSize={"sm"}> 59 </Text> */}
                         </Flex>
                     </WrapItem>
                 </Box>
@@ -87,14 +58,27 @@ export default function Filters() {
                         <Input placeholder='Search Product Form' />
 
                         {Product_Form?.map((item) => (
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value={item} onChange={handleFilter}> {item}  </Checkbox>
+                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value={item} onChange={(e)=>setType([...type, e.target.value])} > {item}  </Checkbox>
                                 <Spacer />
-                                <Text fontSize={"sm"}> 5 </Text>
+                                {/* <Text fontSize={"sm"}> 5 </Text> */}
                             </Flex>
                         ))}
                     </WrapItem>
                 </Box>
 
+                <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
+                    <WrapItem display={"block"} p="4">
+                        <Text fontSize='md' as={"b"}>Category</Text>
+                        <Input placeholder='Search Uses' />
+
+                        {category_list?.map((item) => (
+                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value={item} onChange={(e)=>setCategory([...category, e.target.value])}> {item}  </Checkbox>
+                                <Spacer />
+                                {/* <Text fontSize={"sm"}> 5 </Text> */}
+                            </Flex>
+                        ))}
+                    </WrapItem>
+                </Box>
 
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
@@ -102,9 +86,10 @@ export default function Filters() {
                         <Input placeholder='Search Uses' />
 
                         {Uses?.map((item) => (
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red'> {item}  </Checkbox>
+                            // onChange={(e)=>setType([...type, e.target.value])}
+                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
                                 <Spacer />
-                                <Text fontSize={"sm"}> 5 </Text>
+                                {/* <Text fontSize={"sm"}> 5 </Text> */}
                             </Flex>
                         ))}
                     </WrapItem>
@@ -116,7 +101,7 @@ export default function Filters() {
                         <Flex>
                             <Checkbox size='sm' colorScheme='red'> All  </Checkbox>
                             <Spacer />
-                            <Text fontSize={"sm"}> 5 </Text>
+                            {/* <Text fontSize={"sm"}> 5 </Text> */}
                         </Flex>
                     </WrapItem>
                 </Box>
@@ -127,24 +112,16 @@ export default function Filters() {
                         <Flex>
                             <Checkbox size='sm' colorScheme='red'> Unisex  </Checkbox>
                             <Spacer />
-                            <Text fontSize={"sm"}> 5 </Text>
+                            {/* <Text fontSize={"sm"}> 5 </Text> */}
                         </Flex>
                     </WrapItem>
                 </Box>
-
-                <input
-                    type="checkbox"
-                    defaultChecked={category.includes("")}
-                    value="Supplement"
-                    onChange={handleFilter}
-                />
-                <label> spplements </label>
 
             </Box>
         </>
     )
 }
-
-
-const Product_Form = ["Capsume", "Pack", "Bottle", "Juice", "Syrup", "Tablet"];
+const brands=["Mamaearth", "Dabur", "Sugar Free", "Himalaya", "Baidyanath"]
+const category_list = ["Supplement", "Diabetes", "COVID", "Devices"]
+const Product_Form = ["Box", "Strip", "Bottle", "Jar", "Tin", "Packet", "1 Unit", "Combo Pack"];
 const Uses = ["Immunity Booster", "Liver Care", "Skin Care", "Stomach Care", "Diabetes Care", "Hair Care", "Blood Purifiers", "Cardiac Care", "Respiratory Care"];

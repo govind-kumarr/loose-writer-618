@@ -19,7 +19,7 @@ export default function ProductCard({item}) {
   </Flex>
 
   <Flex  gap="2">
-  <Text fontSize='xs' as="del">MRP ₹ 2026</Text>
+  <Text fontSize='xs' as="del">MRP ₹ {item.price*2}</Text>
     <Text fontSize='xs' color="#1aab2a">{item.off}% OFF</Text>
   </Flex>
 

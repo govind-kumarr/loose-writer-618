@@ -104,8 +104,55 @@ const deleteproduct=(id)=>(dispatch)=>{
     
 }
 
+//Edit/Patch Request 
+
+const patchProductRequest=()=>{
+    return{
+        type:types.EDIT_PRODUCT_REQUEST
+    }
+}
+
+const patchProductSuccess=()=>{
+    return{
+        type:types.EDIT_PRODUCT_SUCCESS,
+    }
+}
+
+const patchProductFailure=()=>{
+    return{
+        type:types.EDIT_PRODUCT_FAILURE,
+    }
+}
+
+const patchProduct=(id,payload)=>(dispatch)=>{
+    dispatch(patchProductRequest());
+    return axios.patch(`https://onemgfree-api-server.onrender.com/products/${id}`,{quantity:payload})
+    .then(r=>{
+        console.log(r.data,"patch data result");
+        dispatch(patchProductSuccess());
+    })
+    .catch(e=>{
+        dispatch(patchProductFailure());
+    })
+}
+const postProduct=(postpayload)=>{
+    return{
+        type:"postRequest",
+        postpayload
+    }
+}
+const simpleGet=(dispatch)=>{
+    return axios.get(`https://onemgfree-api-server.onrender.com/products`)
+    .then(r=>{
+        console.log(r.data,"r.data")
+        dispatch({type:"simpleGETProduct",simplepayload:r.data})
+    })
+}
+
 export {
     addProduct,addProductRequest,addProductSuccess,addProductFailure,
     getProducts,getProductsRequest,getProductsSuccess,getProductsFailure,
     deleteproduct,deleteProductRequest,deleteProductSuccess,deleteProductFailure,
+    patchProduct,patchProductRequest,patchProductSuccess,patchProductFailure,
+    postProduct,simpleGet
 }

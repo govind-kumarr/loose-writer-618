@@ -1,18 +1,24 @@
-import { Heading } from '@chakra-ui/react';
+import { Button, Heading, Spacer } from '@chakra-ui/react';
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Recent from './Recent';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 const RecentlyAdded = () => {
   const noofproducts = useSelector(store => store.AdminReducer.products);
   //console.log(noofproducts, "no of products");
  // noofproducts.reverse();
-  console.log(noofproducts,"no of products after reverse")
+  
  let x=noofproducts.length;
  console.log(x,"length")
   return (
     <div>
+      <div>
       <Heading>Recently Added</Heading>
+      <br/>
+      <Link to="/check"><Button colorScheme="teal">See All</Button></Link>
+      </div>
+      <br/>
       <Product >
         {
           noofproducts.map((item,index) => {
@@ -27,10 +33,10 @@ const RecentlyAdded = () => {
 }
 const Product=styled.div`
 display: grid;
-border: 1px solid green;
+border: 0px solid green;
 grid-template-columns:repeat(4,280px);
 justify-content:space-evenly;
-direction:rtl;
+//direction:rtl;
 @media all and (min-width:0px) and (max-width:481px){
   grid-template-columns:repeat(1,minmax(280px,max-content));
   grid-row-gap:10px;

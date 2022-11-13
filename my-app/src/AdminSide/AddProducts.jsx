@@ -39,7 +39,7 @@ const AddProducts = () => {
     const [allert, setallert] = useState(false);
     const [alert0,setAlert0]=useState(false);
 
-   
+    //console.log("cheked")
    // console.log(produ, "products in add product")
 
     useEffect(() => {

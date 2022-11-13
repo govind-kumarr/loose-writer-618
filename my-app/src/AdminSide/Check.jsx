@@ -1,28 +1,45 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { products } from '../data/ProductsData';
+import { getProducts } from '../Redux/AdminPanel/action';
+import { Heading } from '@chakra-ui/react';
+import Recent from "./Recent";
+import InputSearch from './InputSearch';
 
-const Check = (props) => {
-    const {prod}=props;
-    console.log(prod,"prod in check")
-    const prodo=useSelector((store)=>store.AdminReducer.prodo)
-    const dispatch=useDispatch();
+const Check = () => {
 
-    console.log(prodo,"prodo")
-    useEffect(()=>{
-     //dispatch(addProd([{id:8,title:"xxxxx"}]))
-    },[])
+  const checkProducts = useSelector((store) => store.AdminReducer.products);
+  const checkIsLoading = useSelector((store) => store.AdminReducer.isLoading);
+  const checkIsError = useSelector((store) => store.AdminReducer.isError);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts)
+  }, [])
+
+  if (checkIsLoading) {
+    return (
+      <Heading>...Loading...</Heading>
+    )
+  }
+  if (checkIsError) {
+    return (
+      <Heading>.. OOps something went wrong with API ..</Heading>
+    )
+  }
   return (
     <div>
-        <h1>Check</h1>
-        {!prod && products.map(item=><h1>products h{item.title}</h1>)}
-        {prod && prod.map((item)=>{
-        return (<h1>Hi{item.title}</h1>)
-    })}
+      <br/>
+      <Heading>All the Products</Heading>
+      <br/>
+      <InputSearch/>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,max-content))", justifyContent: "space-evenly", gridRowGap: "40px"}}>
+        {checkProducts.length > 0 && checkProducts.map((item) => {
+          return (<div style={{ width: "280px"}} key={item.id}><Recent id={item.id} title={item.title} image={item.image} price={item.price} category={item.category} type={item.type} subTitle={item.subTitle} rate={item.rate} count={item.count} off={item.off} quantity={item.quantity} max_unit={item.max_unit} /></div>)
+        })}
+      </div>
     </div>
-    
   )
 }
 
-export default Check
+export default Check;

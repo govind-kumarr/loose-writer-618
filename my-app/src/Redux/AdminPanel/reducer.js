@@ -6,8 +6,8 @@ const initData={
 }
 
 const reducer=(oldState=initData,action)=>{
-    //console.log(action,"action")
-    const {type,getpayload}=action;
+    console.log(action,"action")
+    const {type,getpayload,postpayload,simplepayload}=action;
     //console.log(payload,"pyaload in reducer")
     switch(type){
 
@@ -31,7 +31,7 @@ const reducer=(oldState=initData,action)=>{
             }
         case types.GET_PRODUCTS_SUCCESS:
             return{
-                ...oldState,products:getpayload,isLoading:false,isError:false
+                ...oldState,products:getpayload.reverse(),isLoading:false,isError:false
             }
         case types.GET_PRODUCTS_FAILURE:
             return{
@@ -54,6 +54,31 @@ const reducer=(oldState=initData,action)=>{
                 ...oldState,isLoading:false,isError:true
             }
 
+        //Edit or patch Request
+
+        case types.EDIT_PRODUCT_REQUEST:
+            return{
+                ...oldState,isLoading:true
+            }
+        
+        case types.EDIT_PRODUCT_SUCCESS:
+            return{
+                ...oldState,isLoading:false
+            }
+        
+        case types.EDIT_PRODUCT_FAILURE:
+            return{
+                ...oldState,isLoading:false,isError:true
+            }
+
+        case "postRequest":
+            return{
+                ...oldState,products:postpayload
+            }
+        case "simpleGETProduct":
+            return{
+                ...oldState,products:simplepayload
+            }
         default:
             return oldState;
     }

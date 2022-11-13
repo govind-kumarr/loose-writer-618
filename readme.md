@@ -8,10 +8,8 @@ Member 2 - Shivaji Pandurang Jadhav
 Member 3 - Mukul
 Member 4 - Preeti Raj
 
-
-Tasks - 
+Tasks -
 Govind - HomePage Login SignUP
 Mukul - Product Page
 Shivaji - CartPage and Checkout Functionality
 Mohan M - LabTest Page
-

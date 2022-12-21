@@ -8,7 +8,7 @@ const LabPage = () => {
       <div className="nav">Navbar</div>
       <div className="nav">SubNavbar</div>
         <div className='lab'>
-        <Slider />
+        {/* <Slider /> */}
         <h3 className='textLeft'>Book A Lab Test</h3>
         </div>  
         <img src={image} alt="Poster" className='Poster' />

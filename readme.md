@@ -13,5 +13,6 @@ Tasks -
 Govind - HomePage Login SignUP
 Mukul - Product Page
 Shivaji - CartPage and Checkout Functionality
-Mohan M - LabTest Page
+Mohan M - Admin Page
+Preeti Raj - Labtest Page
 

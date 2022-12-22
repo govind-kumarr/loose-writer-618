@@ -4,7 +4,7 @@ import SingleProduct from "../Components/SingleProduct";
 import AdminPage from "../Pages/AdminPage";
 import Cart from "../Pages/Cart";
 import Error from "../Pages/Error";
-import HomePage from "../Pages/HomePage";
+import HomePage from "../Home_page/Home.jsx";
 import Login from "../Pages/Login";
 import Products from "../Pages/Products";
 import SignUP from "../Pages/SignUp.js";

@@ -1,19 +1,18 @@
-
-
-
-import './App.css';
-import AllRoutes from './AllRoutes/AllRoutes';
-import Footer from './Components/Footer';
-import LabPage from './Pages/LabPage';
+import "./App.css";
+import AllRoutes from "./AllRoutes/AllRoutes";
+import Footer from "./Components/Footer";
+import LabPage from "./Pages/LabPage";
+import Navbar from "./Components/header/Navbar";
 
 function App() {
   return (
     <div className="App">
-     <AllRoutes/>
-     <LabPage />
-     <Footer />
-
+      <Navbar />
+      <AllRoutes />
+      {/* <LabPage /> */}
+      <Footer />
     </div>
-  )}
+  );
+}
 
-  export default App;
+export default App;

@@ -1,21 +1,35 @@
-
 //Importing dependencies
 import React from "react";
 import styled from "styled-components";
 import { useContext } from "react";
 
-
 //importing important components/functions
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
+//Components
+import { Link } from "react-router-dom";
+
+//Functions
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+//Reducer Functions
+import { get_data, Logout } from "../../../Redux/actions";
 
-
+//Contexts
+import { AuthContext } from "../../../Redux/Login_Auth.jsx";
 
 const NavbarTop = () => {
+  const { setvisible, setShow } = useContext(AuthContext);
+  const nevigate = useNavigate();
+  const { cartData, token } = useSelector((state) => {
+    return state;
+  });
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    get_data(dispatch);
+  }, []);
   return (
     <Wrapper>
       <div className="navbar">

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "imgURL": "https://onemg.gumlet.io/image/upload/l_watermark_110,w_100,h_700/a_ignore,w_100,h_100,c_pad,q_auto,f_auto/v1642507775/gmkrpf1imjj9djwvq4gq.jpg",
+    "title": "Tata 1mg Multivitamin Supreme, Zinc",
+    "link": "https://www.1mg.com/otc/tata-1mg-multivitamin-supreme-zinc-calcium-and-vitamin-d-immunity-booster-capsule-otc503409",
+    "info": " bottle of 60 capsules",
+    "mrp": "₹995",
+    "rating": "335rating",
+    "discount": "55%off",
+    "sellingPrice": "₹ 448",
+    "star": 4.5
+  },
+  {
+    "id": 2,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_100,h_100,c_fit,q_auto,f_auto/v1637324194/gc3u9gfc331wtsipnljl.jpg",
+    "title": "Tata 1mg Calcium + Vitamin D3, Zinc ",
+    "link": "https://www.1mg.com/otc/tata-1mg-calcium-vitamin-d3-zinc-magnesium-and-alfalfa-tablets-for-joint-health-immunity-otc536094",
+    "info": " bottle of 60 capsules",
+    "mrp": "₹ 595",
+    "rating": "672rating",
+    "discount": "60%off",
+    "sellingPrice": "₹ 238",
+    "star": 2.1
+  },
+  {
+    "id": 3,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_130,h_100,c_fit,q_auto,f_auto/v1643307171/ffel0eytbg8gvbjxlykh.jpg",
+    "title": "Tata 1mg BIS Approved FFP2 N95 Mask",
+    "link": "https://www.1mg.com/otc/tata-1mg-bis-approved-ffp2-n95-mask-head-loop-10-mask-otc701780",
+    "info": "box of 10 masks",
+    "mrp": "₹ 900",
+    "rating": "50rating",
+    "discount": "50%off",
+    "sellingPrice": "₹ 450",
+    "star": 4.4
+  },
+  {
+    "id": 4,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_100,h_100,c_fit,q_auto,f_auto/v1645272788/qh1au45w8u7cfvf3lg3i.jpg",
+    "title": "Tata 1mg Women's Multivitamin, Zinc",
+    "link": "https://www.1mg.com/otc/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet-otc555721",
+    "info": " bottle of 60 capsules",
+    "mrp": "₹ 995",
+    "rating": "98rating",
+    "discount": "60%off",
+    "sellingPrice": "₹ 398",
+    "star": 3.1
+  },
+  {
+    "id": 5,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_100,h_100,c_fit,q_auto,f_auto/v1642507827/fwram2p7rbkoigjg6zas.jpg",
+    "title": "Tata 1mg Salmon Omega 3 Fish Oil Capsule",
+    "link": "https://www.1mg.com/otc/tata-1mg-salmon-omega-3-fish-oil-capsule-otc503411",
+    "info": " bottle of 60 capsules",
+    "mrp": "₹ 400",
+    "rating": "78rating",
+    "discount": "51%off",
+    "sellingPrice": "₹ 196",
+    "star": 4.0
+  },
+  {
+    "id": 6,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_100,h_100,c_fit,q_auto,f_auto/v1638444070/nwhioxrxmwjkaxitryag.jpg",
+    "title": "Tata 1mg BIS Approved FFP2 N95 Mask for Kids ",
+    "link": "https://www.1mg.com/otc/tata-1mg-bis-approved-ffp2-n95-mask-for-kids-5-mask-otc692293",
+    "info": "box of 5 masks",
+    "mrp": "₹ 995",
+    "rating": "456rating",
+    "discount": "70%off",
+    "sellingPrice": "₹ 295",
+    "star": 3.2
+  },
+  {
+    "id": 7,
+    "imgURL": "https://onemg.gumlet.io/image/upload/a_ignore,w_130,h_100,c_fit,q_auto,f_auto/v1631894537/w9eyedqdlnlntuc0zl7d.jpg",
+    "title": "1mg High Fiber with Pre- &amp; Probiotics with Inulin",
+    "link": "https://www.1mg.com/otc/1mg-high-fiber-with-pre-probiotics-with-inulin-guar-gum-resistant-maltodextrin-unflavoured-unflavoured-with-resistant-maltodextrin-inulin-and-guar-gum-otc640226",
+    "info": "jar of 200gm powder",
+    "mrp": "₹595",
+    "rating": "90rating",
+    "discount": "60%off",
+    "sellingPrice": "₹ 238",
+    "star": 3.0
+  }
+]

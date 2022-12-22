@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Flat 50% + extra 15% off + assured 5% NeuCoins on popular health checkups",
+    "imgURL":
+      "https://res.cloudinary.com/du8msdgbj/image/upload/v1650522721/hmr2wobqxizgkqtslcxi.png",
+    "date": "Expiry: 06 May 22"
+  },
+  {
+    "id": 10,
+    "title": "SSured same-day reports for lab tests & health checkups from TATA 1mg",
+    "imgURL":
+      "https://res.cloudinary.com/du8msdgbj/image/upload/v1644575332/blrx5qwdbdfxwjpjo1b7.jpg",
+    "date": "Expiry: 31 may 22"
+},
+{
+  "id": 5,
+  "title": "Pay with Mobikwik and get up to ₹500 cashback with assured cashback of ₹100",
+  "imgURL":
+    "https://res.cloudinary.com/du8msdgbj/image/upload/v1650882911/oavmwhoy4vmy7nt5hi6z.jpg",
+  "date": "Expiry: 31 may 22"
+  },
+{
+  "id": 6,
+  "title": "Pay with Airtel Payments Bank and get flat ₹150 cashback on a minimum transaction of ₹1000",
+  "imgURL":
+    "https://res.cloudinary.com/du8msdgbj/image/upload/v1648838060/uwujyqp77xeq1y6acvyj.png",
+  "date": "Expiry: 5 may 22"
+ },
+{
+  "id": 7,
+  "title": "Get up to ₹200 cashback on your transaction via Freecharge Pay Later or Wallet",
+  "imgURL":
+    "https://res.cloudinary.com/du8msdgbj/image/upload/v1599820984/marketing/yyjr0lquewl8o2djqqzn.png",
+  "date": "Expiry: 5 may 22"
+}
+]

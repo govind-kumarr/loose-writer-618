@@ -7,3 +7,12 @@
     gap: 20px;
       
 }
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.main-container>div:nth-child(1){
+    width: 20%;
+}

@@ -281,6 +281,7 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `
 const Top = styled.div`
 border:0px solid blue;
+margin-left:20px;
 
 @media all and (min-width:0px) and (max-width:481px){
     display:flex;

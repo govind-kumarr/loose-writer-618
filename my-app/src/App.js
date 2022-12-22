@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
      <AllRoutes/>
-     <LabPage />
+     {/* <LabPage /> */}
      <Footer />
 
     </div>

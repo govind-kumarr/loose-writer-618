@@ -1,0 +1,24 @@
+.container{
+    width:90%;
+    margin: auto;
+    border:0px solid green;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,max-content));
+    gap: 20px;
+      
+}
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.main-container>div:nth-child(1){
+    width: 20%;
+}
+.sorting{
+   border:1px solid green;
+    width:70%;
+    display: flex;
+    justify-content: flex-end;
+}

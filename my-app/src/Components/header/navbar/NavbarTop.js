@@ -7,7 +7,11 @@ import { useContext } from "react";
 
 //importing important components/functions
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 
 
 

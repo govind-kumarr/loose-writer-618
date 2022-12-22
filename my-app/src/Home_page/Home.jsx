@@ -1,8 +1,5 @@
 import React from "react";
-import LastsecFooter from "../Components/LastsecFooter";
-import Advertisement from "../Navbar/Components/Advertisement";
-import { Navbar_dropdown } from "../Navbar/Components/Navbar_dropdown";
-import { Navbar_search } from "../Navbar/Components/Navbar_search";
+import LastsecFooter from "../Components/LastsecFooter.jsx";
 import Ayurved from "../Productdiv/components/Ayurveda";
 import FeaturedBrand from "../Productdiv/components/FeaturedBrand";
 import Healthconcern from "../Productdiv/components/HealthConcern";
@@ -18,9 +15,6 @@ import Trending from "./Home_products/Trending.jsx";
 const Home = () => {
   return (
     <div style={{ backgroundColor: "#f1f4f6" }}>
-      <Navbar_search />
-      <Navbar_dropdown />
-      <Advertisement />
       <FeaturedBrand />
       <Trending />
       <ProductDetails />

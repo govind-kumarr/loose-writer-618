@@ -1,0 +1,93 @@
+.product_container {
+  margin: 50px 0;
+}
+
+.bigcontainer {
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0px 0px 18px rgba(33, 33, 33, 0.2);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: white;
+}
+
+.smallcontainer {
+  background-color: white;
+  text-align: center;
+}
+
+.smallcontainer > div:hover {
+  border-radius: 8px;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 30%);
+}
+
+.smallcontainer img {
+  max-width: 100%;
+  margin: 20px 0;
+  height: 120px;
+  opacity: 1;
+  transform: scale(1);
+  animation: Cards_apear__SREkU 0.3s ease-in-out;
+}
+
+.smallcontainer > a > div {
+  font-size: 14px;
+  height: 45px;
+  color: #212121;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bigcontainer .smallcontainer a {
+  text-decoration: none;
+  color: black;
+  margin: 5px 0;
+  margin-bottom: 34px;
+  margin: 0;
+}
+
+.featuredbrand {
+  width: 85%;
+  border: 1px solid yellow;
+  display: flex;
+  margin: auto;
+  margin-left: 9%;
+}
+
+.featuredbrand .brand-1 {
+  margin: 2%;
+}
+.cat-title {
+  height: 30px;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.style__heading___pc8n7 {
+  font-size: 18px;
+  color: #212121;
+}
+button {
+  background-color: rgb(255, 127, 97);
+  color: white;
+  border: 0px;
+  -ms-text-size-adjust: auto;
+  border-radius: 5px;
+  width: 80px;
+  height: 39px;
+}
+
+.smallcontainer:hover {
+  box-shadow: 0px 0px 18px rgba(33, 33, 33, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.smallcontainer {
+  max-width: 100%;
+}

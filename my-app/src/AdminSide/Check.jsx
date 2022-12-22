@@ -32,7 +32,7 @@ const Check = () => {
       <Heading ref={ref}>All the Products</Heading>
       <br />
       <InputSearch />
-      {/* <div className="sorting">Sorting</div> */}
+      {/* <div className="sorting">Sorting By</div> */}
       <div className="main-container">
         <div>
           <FilterMenu />

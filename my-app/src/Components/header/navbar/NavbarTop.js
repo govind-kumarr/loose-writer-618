@@ -23,7 +23,7 @@ const NavbarTop = () => {
   const { setvisible, setShow } = useContext(AuthContext);
   const nevigate = useNavigate();
   const { cartData, token } = useSelector((state) => {
-    return state;
+    return state.ProductReducer;
   });
   const dispatch = useDispatch();
 
@@ -49,9 +49,6 @@ const NavbarTop = () => {
             </div>
             <div>
               <Link to="/LabTests">LAB TESTS</Link>
-              <div className="reddiv Safe_div">
-                <div>SAFE</div>
-              </div>
             </div>
             <div>
               <Link to="/AskDoctor">ASK DOCTOR</Link>

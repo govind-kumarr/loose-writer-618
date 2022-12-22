@@ -1,10 +1,10 @@
 import React, { createContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login_func, logout_func } from "./actions";
+import { login_func, logout_func } from "./actions.js";
 
 export const AuthContext = createContext();
 
-export const Login_Auth = ({ children }) => {
+const AuthContextProvider = ({ children }) => {
   const { isAuth } = useSelector((state) => {
     return state;
   });
@@ -41,4 +41,4 @@ export const Login_Auth = ({ children }) => {
   );
 };
 
-export default Login_Auth;
+export default AuthContextProvider;

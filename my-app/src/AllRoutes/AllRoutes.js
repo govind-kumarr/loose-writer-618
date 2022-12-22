@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Check from "../AdminSide/Check";
 import SingleProduct from "../Components/SingleProduct";
 import AdminPage from "../Pages/AdminPage";
 import Cart from "../Pages/Cart";
@@ -20,6 +21,7 @@ const AllRoutes = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/products:id" element={<SingleProduct />} />
+        <Route path="/check" element={<Check/>}/>
         <Route path="*" element={<Error />} />
       </Routes>
     </>

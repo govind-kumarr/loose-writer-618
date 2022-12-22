@@ -16,3 +16,9 @@
 .main-container>div:nth-child(1){
     width: 20%;
 }
+.sorting{
+   border:1px solid green;
+    width:70%;
+    display: flex;
+    justify-content: flex-end;
+}

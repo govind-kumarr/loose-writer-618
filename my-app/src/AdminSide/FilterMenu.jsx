@@ -6,20 +6,15 @@ const FilterMenu = () => {
         {/* filtering */}
       <div>
         <div>Filter By</div>
-        <div>
+        {/* <div>
           <Checkbox defaultChecked>Name</Checkbox>
         </div>
         <div>
           <Checkbox defaultChecked>Price</Checkbox>
-        </div>
+        </div> */}
       </div>
 {/* sorting */}
-      <div>
-            <div>Sorting</div>
-            <div>
-                Ascending Order
-            </div>
-      </div>
+      
     </div>
   );
 };

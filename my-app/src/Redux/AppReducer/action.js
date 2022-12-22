@@ -11,7 +11,7 @@ const getProductsRequest = () =>{
 const getProducts = (params ={}) => (dispatch) => {
     dispatch(getProductsRequest());
 
-    return axios.get("http://localhost:8080/products", 
+    return axios.get("https://onemgfree-api-server.onrender.com/products", 
     {params: {
         category:params.category,
         type: params.type,

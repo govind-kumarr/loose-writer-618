@@ -1,0 +1,51 @@
+.container {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+  gap: 30px;
+}
+.flex > div > input {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.box > form > input {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: none;
+}
+.box > form > button {
+  width: 100%;
+}
+.imge {
+  padding-top: 120px;
+  width: 70%;
+  margin: auto;
+}
+.imge > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+.imge > div > img {
+  width: 60px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+}

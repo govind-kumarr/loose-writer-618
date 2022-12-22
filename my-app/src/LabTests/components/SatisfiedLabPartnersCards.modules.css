@@ -1,0 +1,50 @@
+.satisLabPartwrap {
+  width: 100%;
+  margin: auto;
+}
+
+.satisLabPartboxes {
+  margin: auto;
+  width: 85%;
+  height: 360px;
+  text-align: left;
+  border: 1px solid rgb(196, 196, 196);
+  padding: 20px;
+}
+
+.satisfiedpara {
+  color: rgb(87, 87, 87);
+}
+
+.contentLogo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.satisfiedcontent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.satisfiedhead {
+  font-size: 15px;
+}
+
+.satisfiedpara {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.satisfiedimgouter {
+  width: 100%;
+  height: 100%;
+}
+
+.satisfiedimg {
+  width: 100%;
+  height: 80%;
+}

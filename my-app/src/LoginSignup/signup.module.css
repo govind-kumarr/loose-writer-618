@@ -1,0 +1,15 @@
+.form{
+    width: 100%;
+    border-left: 0.5px solid grey;
+}
+
+.pop{
+    display: flex;
+    justify-content:space-around;
+    width:75% ;
+      height:70%;
+     margin:auto;
+}
+.pop>div:nth-child(1){
+    margin-right: 20% ;
+}

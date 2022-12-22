@@ -1,0 +1,60 @@
+.container{
+    width: 90%;
+    margin: auto;
+    display:flex;
+    gap:20px;
+    gap:20px;
+}
+
+.container>div:nth-child(1){
+    width:60%;
+}
+.h1{
+    font-weight:10px;
+}
+.box,.box2{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:15px;
+}
+.inputflex{
+    display:flex;
+    background-color: linen;
+    padding:5px;
+}
+.header{
+    display: flex;
+    justify-content:space-between;
+}
+.box2{
+    margin-top: 50px;
+    width:100%;
+}
+.header>button{
+    color:coral;
+    background-color:white;
+    font-weight:bold;
+    padding-top: 20px;
+}
+.box2>button{
+    width: 95%;
+    color:white;
+    background-color:coral;
+}
+
+.card{
+    display: flex;
+    gap:20px;
+   
+}
+.card>div>img{
+    width:30px;
+    height:30px;
+    margin-top: 30px;
+}
+.card>div>p{
+    margin-top:-15px;
+}
+.detail{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:10px;
+}

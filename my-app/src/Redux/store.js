@@ -1,10 +1,4 @@
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import { reducer as AuthReducer } from "./AuthReducer/reducer";
-import {reducer as AdminReducer} from "./AdminPanel/reducer";
-import thunk from "redux-thunk";
+import {legacy_createStore as createStore} from "redux"
+import { reducer } from "./reducer";
 
-const rootReducer = combineReducers({ AuthReducer,AdminReducer });
-
-const store = legacy_createStore(rootReducer,applyMiddleware(thunk));
-
-export { store };
+export const store = createStore(reducer);

@@ -1,0 +1,131 @@
+/* body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  } */
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  /* width: 210px; */
+  background-color: #f1f1f1;
+  /* position: fixed; */
+  height: 100%;
+  overflow: auto;
+  text-transform: capitalize;
+  margin-left: 18px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.sidebar hr {
+  border: 1px;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 5px;
+  margin-top: 0;
+  width: 90%;
+  display: flex;
+  width: 120%;
+  margin-left: -15px;
+  margin-top: 10px;
+  /* height: 1px; */
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.sidebar a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: rgb(255, 131, 97);
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: auto;
+  font-size: 12px;
+}
+
+.brand {
+  text-align: center;
+  justify-content: space-around;
+}
+.slider {
+  box-sizing: border-box;
+  direction: ltr;
+  height: auto;
+  position: relative;
+  width: auto;
+  will-change: transform;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 225px;
+  outline: none;
+  padding: 0 15px;
+}
+
+.filter {
+  height: 40px;
+  display: grid;
+  grid-template-columns: 10% 60% 20%;
+  gap: 8px;
+  justify-content: space-evenly;
+  min-width: 80%;
+  cursor: pointer;
+  font-size: 12px;
+  align-items: center;
+}
+.filter:hover {
+  color: rgb(255, 131, 97);
+}
+p {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.CatHeading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.Featured_div {
+  font-weight: 700;
+  color: #ff6f61;
+  font-size: 12px;
+}
+
+.filter_name {
+  font-size: 14px;
+  color: #212121;
+  padding-top: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* margin-top: 20px; */
+}
+
+.filter_heading {
+  font-size: 14px;
+  color: #212121;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.filter_input {
+  border-radius: 4px;
+  border: 1px solid #b3b3b3;
+  padding: 5px;
+  box-shadow: 0 0 2px #ccc;
+}

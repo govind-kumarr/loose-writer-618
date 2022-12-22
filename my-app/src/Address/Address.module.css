@@ -1,0 +1,48 @@
+.address{
+    width:90%;
+    margin: auto;
+}
+h2{
+    color:black
+}
+.form{
+   width: 40%;
+   gap: 10px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   padding: 30px;
+   padding-left: 5px;
+   border: 0.5px solid grey;
+}
+.form>input{
+    width: 100%;
+    margin-top: 10px;
+    font-size:18px;
+    padding:5px;
+}
+.form>input:nth-child(1){
+    height:60px;
+    padding:0px;
+}
+.flexip{
+    display:flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.flexbtn{
+    display:flex;
+    margin-left: 70%;
+    gap:10px;
+}
+.flexp{
+    display:flex;
+    gap:10px;
+}
+.flexp>div{
+    width: 20%;
+    margin-top: 10px;
+    border-top: 0.5px solid grey;
+}
+.flexp>div>p{
+    color:grey;
+    text-align: justify;
+}

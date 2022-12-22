@@ -1,0 +1,19 @@
+.box {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.container > div {
+  margin-bottom: 20px;
+}
+.flex {
+  display: flex;
+  gap: 30px;
+}
+.box > p {
+  font-size: 14px;
+  color: rgb(255, 127, 97);
+}

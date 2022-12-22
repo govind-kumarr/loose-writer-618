@@ -1,0 +1,67 @@
+.flexp {
+  display: flex;
+  gap: 10px;
+}
+.flexp > div {
+  width: 20%;
+  margin-top: 10px;
+  border-top: 0.5px solid grey;
+}
+.flexp > div > p {
+  color: grey;
+  text-align: justify;
+}
+.flex {
+  display: flex;
+  gap: 20px;
+  width: 40%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+  padding: 20px;
+}
+.box {
+  width: 85%;
+  margin: auto;
+  margin-top: 10px;
+}
+.flex > div > input {
+  margin-top: 40px;
+}
+.flex > div > h6 {
+  line-height: 1.6;
+  /* margin-bottom: -10px; */
+}
+.flex > div > p {
+  line-height: 1.6;
+  /* margin-top: -10px; */
+}
+.box > form {
+  margin-top: 20px;
+}
+.box > form > div {
+  margin-top: 10px;
+}
+.box > form > div:nth-child(5) {
+  margin-top: 10px;
+  width: 300px;
+  height: 30px;
+  background-color: coral;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.box > form > div:nth-child(5) > a {
+  text-decoration: none;
+  color: white;
+}
+
+.flex > div > p {
+  margin-bottom: -10px;
+}
+.flex > div > h6 {
+  margin-bottom: -10px;
+}

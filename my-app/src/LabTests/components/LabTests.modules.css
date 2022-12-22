@@ -1,0 +1,315 @@
+.labtests {
+  text-align: left;
+  margin: auto;
+  width: 100%;
+  background-color: #f7f9fc;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 30px 0;
+}
+
+.slidelabtestswrap {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.slidelabtestswrap > div:first-child {
+  margin-right: 60px;
+}
+
+.slidelabtests {
+  width: 45%;
+}
+
+.labtests .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.labtests .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.labtests .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btnpop {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 25px 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 300px;
+}
+
+.labtestswrap {
+  width: 50%;
+}
+
+.labteststopics {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.labteststopics > .labtop {
+  width: 25%;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 25px;
+}
+
+.labtop img {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.popwrap {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.popwrap > h1 {
+  text-align: left;
+}
+
+.healthvisitwrap {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.health,
+.visit {
+  width: 100%;
+  height: 200px;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+.healthsymbheading,
+.visitsymbheading {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.healthhead,
+.visithead {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 8px;
+}
+
+.healthvisitwrap,
+.healthsymbheading,
+.visitsymbheading {
+  display: flex;
+}
+
+.healthtopics,
+.visittopics {
+  font-size: 12px;
+}
+
+.twoflex {
+  display: flex;
+}
+
+.twoflex > div:first-child {
+  margin-right: auto;
+}
+
+.twoflex > div:last-child {
+  margin-right: 40px;
+}
+
+.twoflex > .svgghead {
+  margin-bottom: 15px;
+}
+
+.svgghead {
+  display: flex;
+  padding-left: 40px;
+}
+
+.svgghead > div:first-child {
+  margin-right: 10px;
+}
+
+.bettests {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 136, 0);
+}
+
+.bettests > div:first-child {
+  margin-right: 10px;
+}
+
+.imgadwrap {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.feath2 {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.featouter {
+  width: 100%;
+  background-color: rgb(252, 250, 250);
+  padding: 30px 0;
+}
+
+.featuredLabs {
+  display: flex;
+}
+
+.featuredPackages {
+  width: 80%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  margin: auto;
+}
+
+.featuredLabs {
+  width: 80%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  margin: auto;
+}
+
+.contentvideowrap {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.contentvideo {
+  height: 300px;
+  width: 45%;
+}
+
+.contentpara {
+  line-height: 22px;
+  color: rgb(87, 87, 87);
+}
+
+.contentfull {
+  width: 47%;
+  font-size: 15px;
+  word-spacing: 0.7px;
+}
+
+.adimg {
+  width: 100%;
+  height: 150px;
+}
+
+.contactuswrap {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.contactbtn {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  min-width: 125px;
+}
+
+.mobilewrap {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.mobileimg {
+  margin-right: 50px;
+}
+
+.mobimgdownloadimgflex,
+.playstoreflex {
+  display: flex;
+}
+
+.playstoreflex > .googleplay {
+  margin-right: 10px;
+}
+
+.downloadimg {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookdiag {
+  margin-bottom: 80px;
+  margin-top: -20px;
+}
+
+.googleplayimg,
+.applestoreimg {
+  width: 140px;
+  height: 45px;
+}
+
+.happycustomersouter {
+  width: 100%;
+  background-color: rgb(252, 250, 250);
+  padding: 20px 0;
+}
+
+.ourHappyCustomerswrap {
+  width: 100%;
+  height: 250px;
+}
+
+.ourSatisfiedLabPartnersouter {
+  width: 80%;
+  margin: auto;
+}
+
+.contentwrap {
+  margin-left: 40px;
+}

@@ -1,0 +1,146 @@
+.Payment_container {
+  margin-top: 30px;
+}
+
+.cartSummary {
+  /* border: 1px solid black; */
+  height: 12%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  color: rgb(117, 117, 117);
+  font-size: 12px;
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.fontbold {
+  font-weight: 700;
+  font-size: 14px;
+}
+.summaryline {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.cartTotalSavings {
+  /* border: 1px solid black; */
+  padding: 15px 15px;
+  height: 13%;
+  background-color: rgb(228, 246, 231);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.totalSavingFont {
+  font-size: 12px;
+  color: rgb(117, 117, 117);
+}
+.totalSavingGreen {
+  font-weight: 700;
+  font-size: 14px;
+  color: green;
+}
+#checkoutBox {
+  padding: 20px 16px 12px;
+}
+#deliveryLocation {
+  /* border: 1px solid rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+}
+#deliveryLocation > div:first-child {
+  font-size: 14px;
+  color: rgb(117, 117, 117);
+}
+#deliveryLocation > div:last-child {
+  color: rgb(255, 111, 97);
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+#checkoutButton {
+  background-color: rgb(255, 111, 97);
+  margin-top: 3%;
+  height: 50%;
+  display: flex;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.dis_flex {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  gap: 10px;
+}
+
+.dis_flex hr {
+  border: 1px;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 5px;
+  margin-top: 0;
+  width: 90%;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex > img {
+  width: 35px;
+  height: 35px;
+}
+
+.flex > h4 {
+  text-align: right;
+}
+
+.flex:last-child {
+  gap: 25px;
+}
+.one {
+  background-color: linen;
+  padding: 20px;
+  height: fit-content;
+}
+.flex:hover {
+  background-color: white;
+}
+.dis_flex > div:nth-child(1) {
+  width: 20%;
+}
+.dis_flex > div:nth-child(2) {
+  width: 60%;
+}
+.dis_flex > div:nth-child(3) {
+  width: 40%;
+}
+.three > button {
+  width: 100%;
+  margin-top: 20px;
+}
+.three > div {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.three > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.three > div:nth-child(1) > p {
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.three > div:nth-child(1) > img {
+  width: 40px;
+  height: 30px;
+}

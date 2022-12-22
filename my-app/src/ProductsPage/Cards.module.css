@@ -1,0 +1,153 @@
+.imge > img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 1;
+  transform: scale(1);
+  animation: apear 0.3s ease-in-out;
+}
+
+@keyframes apear {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.imge {
+  height: 165px;
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.box {
+  height: 343px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 0 7px 0 rgb(0 0 0 / 7%);
+  cursor: pointer;
+}
+
+.box2 > div:nth-of-type(1) {
+  color: #212121;
+  font-size: 14px;
+  margin-bottom: 3px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 3em;
+}
+
+.box2 > div:nth-of-type(2) {
+  font-size: 12px;
+  color: #757575;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.flexGrenn {
+  display: flex;
+  font-size: 12px;
+  align-items: flex-end;
+}
+
+.flexGrenn > span {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.58);
+  margin-right: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.flexGrenn > div:nth-child(1) {
+  background-color: #1aab2a;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 5px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px;
+}
+
+.flexGrenn > div > svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexPrice {
+  display: flex;
+  margin-top: 20px;
+}
+
+.mrp {
+  font-size: 12px;
+  color: #757575;
+  text-decoration: none;
+}
+
+.mrp_sliced {
+  font-size: 12px;
+  margin-left: 2px;
+  color: hsla(0, 0%, 46%, 0.87);
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 12px;
+  color: #1aab2a;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+.flexLast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 18px;
+  color: rgba(33, 33, 33, 0.87);
+}
+
+.flexLast > div:nth-child(2) {
+  font-size: 14px;
+  text-align: left;
+  color: #ff6f61;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link_tag {
+  min-width: 220px;
+  max-width: 200px;
+  height : 300px;
+  position: absolute;
+  z-index: 3;
+}

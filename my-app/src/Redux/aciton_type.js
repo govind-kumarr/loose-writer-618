@@ -1,0 +1,16 @@
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const INCREASE_QUANTITY = "INCREASE_QUANTITY";
+export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
+export const LOADING = "LOADING";
+export const ERROR = "ERROR";
+export const ADD_ADDRESS = "ADD_ADDRESS";
+export const REMOVE_ADDRESS = "REMOVE_ADDRESS";
+export const LOGED_IN = "LOGED_IN";
+export const LOGED_OUT = "LOGED_OUT";
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const HIGH_TO_LOW = "HIGH_TO_LOW";
+export const LOW_TO_HIGH = "LOW_TO_HIGH";
+export const RELEVANCE = "RELEVANCE";
+export const RATING = "RATING";
+export const REVIEW = "REVIEW";

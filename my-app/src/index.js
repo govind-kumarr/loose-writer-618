@@ -14,9 +14,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <AuthContextProvider>
+        <ChakraProvider >
         <BrowserRouter>
           <App />
         </BrowserRouter>
+        </ChakraProvider>
       </AuthContextProvider>
     </Provider>
   </React.StrictMode>

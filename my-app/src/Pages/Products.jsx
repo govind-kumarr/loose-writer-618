@@ -46,6 +46,7 @@ export default function Products() {
   return (
     <>
 
+
       {/* box */}
       <Box bg='#f6f6f6'>
 

@@ -10,6 +10,8 @@ export default function ProductsGrid({ setSortOrder, sortOrder }) {
   // get priductsRecord from appReducer
   const productsRecord = useSelector((store) => store.AppReducer.productsRecord)
 
+  console.log("Product => ",productsRecord)
+
   return (
     <>
 

@@ -7,7 +7,7 @@ export default function Sorting({setSortOrder, sortOrder}) {
     };
   return (
 <>
-<Text mt="auto" mb="auto" fontSize={"md"} textAlign={"center"} mr="3"> Sort By </Text>
+<Text mt="auto" mb="auto" fontSize={"md"} textAlign={"center"} mr="3" > Sort By </Text>
           <Select maxW="200" minWidth={"100"} bg="white" ml="2" m="auto" onChange={handleSortBy}>
             <option value='rel'>Relevance</option>
             {/* <option value=''>Average Customer Rating</option> */}

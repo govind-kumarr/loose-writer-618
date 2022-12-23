@@ -31,7 +31,8 @@ const reducer=(oldState=initData,action)=>{
                 ...oldState,isLoading:true,isError:false
             }
         case types.GET_PRODUCTS_SUCCESS:
-            console.log("succcess")
+            console.log("succcess");
+            console.log(getpayload,"after success in reducer")
             return{
                 ...oldState,products:getpayload.reverse(),isLoading:false,isError:false
             }

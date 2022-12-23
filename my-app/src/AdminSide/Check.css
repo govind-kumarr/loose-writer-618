@@ -8,6 +8,7 @@
       
 }
 .main-container{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 40px;
@@ -18,7 +19,22 @@
 }
 .sorting{
    border:1px solid green;
-    width:70%;
+    width:98%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    padding:10px;
+}
+.sorting>div{
+    margin-right: 10px;
+}
+
+.filter{
+    border:1px solid red;
+    margin-right: 25px;
+}
+.filter>div:nth-child(1){
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }

@@ -65,7 +65,7 @@ const AddProducts = () => {
 
   useEffect(() => {
     console.log("1st");
-    dispatch(getProducts).then((r) => {
+    dispatch(getProducts()).then((r) => {
       console.log(r, "in useEffect get");
     });
     console.log("2st");

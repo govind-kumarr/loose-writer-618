@@ -57,11 +57,11 @@ const getProductsFailure=()=>{
     }
 }
 //<---GetProducts--->
-const getProducts=(dispatch)=>{
+const getProducts=(queryParams)=>(dispatch)=>{
    
     dispatch(getProductsRequest());
     
-    return axios.get(`https://onemg-server-mock.onrender.com/products`)
+    return axios.get(`https://onemg-server-mock.onrender.com/products`,queryParams)
     .then(r=>{
         console.log(r.data,"getProducts in action")
         return dispatch(getProductsSuccess(r.data))

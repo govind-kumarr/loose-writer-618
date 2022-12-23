@@ -1,0 +1,79 @@
+* {
+  /* background-color: rgb(255, 255, 255); */
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.line {
+  height: 1px;
+  width: 350px;
+  margin-left: -24px;
+  background-color: rgb(202, 202, 202);
+}
+
+.container {
+  width: 740px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 20%);
+  grid-gap: 200px;
+  margin-left: 506px;
+  margin-top: -230px;
+  margin-right: 50px;
+  row-gap: 20px;
+  /* border: 2px solid red; */
+}
+
+.card {
+  background-color: rgb(245, 244, 244);
+  /* border:1px solid rgb(44, 223, 41); */
+  border-radius: 5px;
+  padding: 10px;
+  height: 65px;
+  width: 720px;
+  /* border: 2px solid rgb(80, 225, 44); */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.card:hover {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.heading {
+  /* border: 2px solid red; */
+  height: 20px;
+  width: 250px;
+  margin-left: 500px;
+  margin-bottom: 250px;
+  margin-top: -260px;
+  font-weight: bold;
+  /* margin-top: -110px; */
+}
+p1 {
+  /* border: 2px solid red; */
+
+  font-size: 12px;
+  margin-left: -410px;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+p {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  width: 340px;
+  margin-left: 100px;
+  margin-top: -80px;
+  text-align: left;
+  font-weight: bold;
+  /* border: 2px solid rgb(22, 162, 172); */
+  text-overflow: wrap;
+  overflow: wrap;
+}
+
+.imgdata {
+  height: 80px;
+  width: 80px;
+  margin-top: -10px;
+  transition: transform(15px);
+  /* border: 2px solid red; */
+  margin-left: -650px;
+}
+.imgdata:hover {
+  transform: translate(-2%, -2%);
+}

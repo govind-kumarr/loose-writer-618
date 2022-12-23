@@ -1,0 +1,145 @@
+.maincontainer {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 0 7px 0 rgb(0 0 0 / 14%);
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(7, 150px);
+}
+
+.card {
+  width: 200px;
+  padding: 10px 10px 15px;
+  position: relative;
+  width: auto;
+}
+
+.card:hover {
+  /* border:2px solid black; */
+  border-radius: 8px;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 30%);
+  height: auto;
+}
+
+.card-image {
+  background: #fff;
+  display: block;
+  height: 165px;
+  margin: 10px 0;
+  width: 100%;
+  position: relative;
+}
+
+.card-image > img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 1;
+  transform: scale(1);
+  animation: Cards_apear__SREkU 0.3s ease-in-out;
+}
+
+.card-title {
+  font-size: 14px;
+  color: #212121;
+  margin-bottom: 3px;
+  max-height: 34px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.card-info {
+  font-size: 12px;
+  color: #757575;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.card-rating {
+  display: flex;
+}
+
+.card-rating > span:nth-of-type(1) {
+  background-color: #1aab2a;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px;
+}
+
+.card-rating > span:nth-of-type(1) > svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 2px;
+}
+
+.card-rating > span:nth-of-type(2) {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.58);
+  margin-right: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.card-mrp > span:nth-of-type(1) {
+  display: inline-block;
+  font-size: 12px;
+  color: #757575;
+  margin-right: 2px;
+}
+
+.card-mrp > span:nth-of-type(2) {
+  margin-right: 5px;
+  text-decoration: line-through;
+  display: inline-block;
+  font-size: 12px;
+  color: #757575;
+}
+
+.card-discount {
+  font-size: 11px;
+  color: #1aab2a;
+}
+
+.card-price > span {
+  display: inline-block;
+  font-size: 16px;
+  color: #212121;
+}
+
+.sunny {
+  height: 30px;
+  width: 300px;
+  margin-left: 38px;
+  margin-top: 30px;
+}
+.topdeal {
+  font-size: 18px;
+  color: #212121;
+}

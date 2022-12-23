@@ -1,42 +1,43 @@
-import React from 'react'
-import {Box, SimpleGrid, Flex, Text, Spacer, Select   } from '@chakra-ui/react'
+import { Box, SimpleGrid, Flex, Text, Spacer, Select } from '@chakra-ui/react'
 import ProductCard from './ProductCard'
-// import { MdArrowDropDown } from '@chakra-ui/icons'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import Sorting from './Sorting'
 
-export default function ProductsGrid() {
+export default function ProductsGrid({setSortOrder, sortOrder}) {
+
+  // get priductsRecord from appReducer
+  const productsRecord  = useSelector((store)=>store.AppReducer.productsRecord)
+
   return (
     <>
-    
-    <Box w="full" p='4'>
 
-        <Box display={{ md: 'flex' }} mb="5"> 
-            <Text fontSize={"2xl"} textAlign={"center"}> Tejasya Ayurveda </Text>
-            <Spacer />
-            <Text mt="auto" mb="auto" fontSize={"md"} textAlign={"center"} mr="3"> Sort By </Text>
-            <Select maxW="200" minWidth={"100"}  bg="white" ml="2"  m="auto">
-            <option value='option1'>Relevance</option>
-            <option value='option1'>Average Customer Rating</option>
-            <option value='option1'>Price: Low to High</option>
-            <option value='option1'>Price: High to Low </option>
-            <option value='option1'>Discount</option>
-            </Select>
+{/* box */}
+      <Box w="full" p='4'>
 
-             </Box>
+        {/* this box contain sorting component */}
+        <Box display={{ md: 'flex' }} mb="5">
+                {/* cateegory */}
+          <Text fontSize={"2xl"} textAlign={"center"}> Tejasya Ayurveda </Text>
+          <Spacer />
 
-    <SimpleGrid columns={[1,1,2, 3, 4]} spacing='20px'>
-    <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-  
-</SimpleGrid>
-  </Box>
+          {/* sorting conponent */}
+          <Sorting setSortOrder={setSortOrder} sortOrder={sortOrder} />
+        </Box>
+
+{/* This simpleGrid contain all products */}
+        <SimpleGrid columns = {[1, 1, 2, 3, 4]} spacing='20px'>
+
+          {/* map products record */}
+          {productsRecord.data?.map((el) => (
+
+            // ProductCard contain all the information about product
+            <ProductCard key={el.id} item={el} />
+          ))}
+          
+        </SimpleGrid>
+      </Box>
     </>
   )
 }

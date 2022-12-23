@@ -10,13 +10,16 @@ import AuthContextProvider from "./Redux/Login_Auth";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider>
+
+  <React.StrictMode>
     <Provider store={store}>
       <AuthContextProvider>
+        <ChakraProvider >
         <BrowserRouter>
           <App />
         </BrowserRouter>
+        </ChakraProvider>
       </AuthContextProvider>
     </Provider>
-  </ChakraProvider>
+  </React.StrictMode>
 );

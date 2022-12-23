@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Sorting from './Sorting'
 
-export default function ProductsGrid({ setSortOrder, sortOrder }) {
+export default function ProductsGrid() {
 
   // get priductsRecord from appReducer
   const productsRecord = useSelector((store) => store.AppReducer.productsRecord)
@@ -18,18 +18,8 @@ export default function ProductsGrid({ setSortOrder, sortOrder }) {
       {/* box */}
       <Box w="full" p='4' >
 
-        {/* this box contain sorting component */}
-        <Box display={{ md: 'flex' }} pb="5" >
-          {/* cateegory */}
-          <Text fontSize={"2xl"} textAlign={"center"}> Tejasya Ayurveda </Text>
-          <Spacer />
-
-          {/* sorting conponent */}
-          <Sorting setSortOrder={setSortOrder} sortOrder={sortOrder} />
-        </Box>
-
         {/* This simpleGrid contain all products */}
-        <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={"25px"} w="full" >
+        <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={"25px"} w="full" >
 
           {/* map products record */}
           {productsRecord.data?.map((el) => (

@@ -7,7 +7,7 @@ export default function Filters({ setType, type, setCategory, category }) {
         <>
 
             {/* main container */}
-            <Box w="270px" minW={"190px"} h="fit-content" bg='white'>
+            <Box w="270px" minW={"190px"} h="fit-content" bg='white' textAlign={"left"}>
 
                 {/* filters heading */}
                 <Box w="full" pt="2" borderBottom={"1px"} borderColor={"gray.300"}>
@@ -16,15 +16,21 @@ export default function Filters({ setType, type, setCategory, category }) {
 
                 {/* filter by product category */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
-                    <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>Category</Text>
-                        <Input placeholder='Search Uses' />
 
+                    <WrapItem display={"block"} p="4" >
+
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}  >Category</Text>
+                        </Box>
+
+                        {/* map category filters */}
                         {category_list?.map((item) => (
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value={item} onChange={(e) => setCategory([...category, e.target.value])}> {item}  </Checkbox>
-                                <Spacer />
-                                {/* <Text fontSize={"sm"}> 5 </Text> */}
-                            </Flex>
+
+                            // this box contain checkbox   
+                            <Box key={item.id}>
+                                <Checkbox size='sm' colorScheme='red' value={item} onChange={(e) => setCategory([...category, e.target.value])}> {item}  </Checkbox>
+                            </Box>
                         ))}
                     </WrapItem>
                 </Box>
@@ -32,14 +38,19 @@ export default function Filters({ setType, type, setCategory, category }) {
                 {/* filter by product form/type */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>PRODUCT FORM</Text>
-                        <Input placeholder='Search Product Form' />
 
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>PRODUCT FORM</Text>
+                        </Box>
+
+                        {/* map product form filters */}
                         {Product_Form?.map((item) => (
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value={item} onChange={(e) => setType([...type, e.target.value])} > {item}  </Checkbox>
-                                <Spacer />
-                                {/* <Text fontSize={"sm"}> 5 </Text> */}
-                            </Flex>
+
+                            // this box contain filter checkbox
+                            <Box key={item.id}>
+                                <Checkbox size='sm' colorScheme='red' value={item} onChange={(e) => setType([...type, e.target.value])} > {item}  </Checkbox>
+                            </Box>
                         ))}
                     </WrapItem>
                 </Box>
@@ -47,30 +58,41 @@ export default function Filters({ setType, type, setCategory, category }) {
                 {/* filter by product uses */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>USES</Text>
-                        <Input placeholder='Search Uses' />
 
+
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>USES</Text>
+                        </Box>
+
+                        {/* map uses filters */}
                         {Uses?.map((item) => (
-                            // onChange={(e)=>setType([...type, e.target.value])}
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
-                                <Spacer />
-                                {/* <Text fontSize={"sm"}> 5 </Text> */}
-                            </Flex>
+                            // This box contain filter checobox
+                            <Box key={item.id}>
+                                <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
+                            </Box>
                         ))}
                     </WrapItem>
                 </Box>
 
+
                 {/* Filter by brands */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>TOP BRANDS</Text>
-                        <Input placeholder='Search Brands' />
+
+
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>TOP BRANDS</Text>
+                        </Box>
+
+                        {/* map brand filters */}
                         {brands?.map((item) => (
-                            // onChange={(e)=>setType([...type, e.target.value])}
-                            <Flex key={item.id}>  <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
-                                <Spacer />
-                                {/* <Text fontSize={"sm"}> 5 </Text> */}
-                            </Flex>
+
+                            // this box contain filter checkbox
+                            <Box key={item.id}>
+                                <Checkbox size='sm' colorScheme='red' value="item" > {item}  </Checkbox>
+                            </Box>
                         ))}
                     </WrapItem>
                 </Box>
@@ -78,22 +100,33 @@ export default function Filters({ setType, type, setCategory, category }) {
                 {/* filter by discount */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>DISCOUNT</Text>
-                        <Checkbox size='sm' colorScheme='red'> Less Then 10%  </Checkbox> <Spacer />
 
-                        <Checkbox size='sm' colorScheme='red'> 10% and above  </Checkbox>
 
-                        <Checkbox size='sm' colorScheme='red'> 20% and above  </Checkbox>
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>DISCOUNT</Text>
+                        </Box>
 
-                        <Checkbox size='sm' colorScheme='red'> 30% and above  </Checkbox>
-
+                        {/* this box contain discounts checkbox  */}
+                        <Box display={"flex"} flexDirection="column">
+                            <Checkbox size='sm' colorScheme='red'> Less Then 10%  </Checkbox> <Spacer />
+                            <Checkbox size='sm' colorScheme='red'> 10% and above  </Checkbox>
+                            <Checkbox size='sm' colorScheme='red'> 20% and above  </Checkbox>
+                            <Checkbox size='sm' colorScheme='red'> 30% and above  </Checkbox>
+                        </Box>
                     </WrapItem>
                 </Box>
 
                 {/* filter by age */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>AGE</Text>
+
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>AGE</Text>
+                        </Box>
+
+                        {/* filter checkbox */}
                         <Flex>
                             <Checkbox size='sm' colorScheme='red'> All  </Checkbox>
                             <Spacer />
@@ -105,7 +138,12 @@ export default function Filters({ setType, type, setCategory, category }) {
                 {/* filter by gender */}
                 <Box w="full" borderBottom={"1px"} borderColor={"gray.300"}  >
                     <WrapItem display={"block"} p="4">
-                        <Text fontSize='md' as={"b"}>GENDER</Text>
+
+                        {/* This box contain filter name */}
+                        <Box mb="2">
+                            <Text fontSize='md' as={"b"}>GENDER</Text>
+                        </Box>
+
                         <Flex>
                             <Checkbox size='sm' colorScheme='red'> Unisex  </Checkbox>
                             <Spacer />

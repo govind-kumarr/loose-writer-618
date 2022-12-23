@@ -1,10 +1,12 @@
-import { Flex, Spacer, Box, Show } from '@chakra-ui/react'
+import { Flex, Spacer, Box, Show, ChakraProvider, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Filters from '../Components/Filters'
 import Pagination from '../Components/Pagination'
 import ProductsGrid from '../Components/ProductsGrid'
 import { useDispatch } from "react-redux"
 import { getProducts } from '../Redux/AppReducer/action'
+import SmallScreenFilters from '../Components/SmallScreenFilters'
+import Sorting from '../Components/Sorting'
 
 
 export default function Products() {
@@ -46,25 +48,41 @@ export default function Products() {
   return (
     <>
 
+      {/* wrap Products page components with chakraProvider */}
+      <ChakraProvider>
 
-      {/* box */}
-      <Box bg='#f6f6f6'>
+        {/* box */}
+        <Box bg='#f6f6f6' pt="5">
 
-        {/* flex which contain filters and productsGrid component */}
-        <Flex w="full" pl={{ sm: "0px", md: "4", xl: "10" }} pr={{ sm: "0px", md: "5", xl: "10" }}>
+          {/* flex which contain filters and productsGrid component */}
+          <Flex w="full" pl={{ sm: "0px", md: "4", xl: "10" }} pr={{ sm: "0px", md: "5", xl: "10" }}>
 
-          {/* filter component */}
-          <Show above='md'>
-          <Filters setType={setType} type={type} setCategory={setCategory} category={category} />
-          </Show>
-          {/* productGrid contain all products */}
-          <ProductsGrid setSortOrder={setSortOrder} sortOrder={sortOrder} />
-        </Flex>
+            {/* filter component, This component only show on large or above large screen */}
+            <Show above='lg'>
+              <Filters setType={setType} type={type} setCategory={setCategory} category={category} />
+            </Show>
 
-        {/* pagination conponent */}
-        <Pagination setPage={setPage} page={page} />
-      </Box>
+            {/* This box contain Sort productGrid component */}
+            <Box>
+              
+              {/* this box contain sorting component */}
+              <Box display={{ md: 'flex' }} pb="5" >
+              
+                {/* sorting conponent */}
+                <Sorting setSortOrder={setSortOrder} sortOrder={sortOrder} setType={setType} type={type} setCategory={setCategory} category={category} />
+              </Box>
 
+              {/* This component display all the products  */}
+              <ProductsGrid />
+           
+            </Box>
+          </Flex>
+
+          {/* pagination conponent */}
+          <Pagination setPage={setPage} page={page} />
+        
+        </Box>
+      </ChakraProvider>
     </>
   )
 }

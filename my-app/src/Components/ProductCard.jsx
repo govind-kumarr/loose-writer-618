@@ -7,7 +7,7 @@ export default function ProductCard({ item }) {
     <>
 
       {/* box */}
-      <Box bg='white' height='360' w="full" minHeight={"fit-content"} m="auto" maxWidth={"250px"} p="5">
+      <Box bg='white' height='370' w="full" minHeight={"fit-content"} m="auto"  p="5">
 
         {/* product image */}
         <Image p="4" src={item.image} alt='Dan Abramov' h="65%" w="full" />

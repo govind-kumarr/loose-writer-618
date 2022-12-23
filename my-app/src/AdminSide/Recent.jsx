@@ -8,6 +8,7 @@ import {
   getProducts,
   patchProduct,
 } from "../Redux/AdminPanel/action";
+import { DeleteChakra } from "./DeleteChakra";
 
 const Recent = ({
   id,
@@ -66,17 +67,8 @@ const Recent = ({
           <Text><span className="bold">Type: </span>{type}</Text>
         </div>
         <div className="delete-edit">
-          <div>
-            <Button
-              _hover={{ backgroundColor: "teal.400" }}
-              data-cy="delete-button"
-              className="danger"
-              onClick={() => deleteHandle(id)}
-              variant={"outline"}
-              backgroundColor="aqua"
-            >
-              <img src="./delete.png" alt="delete" width="20px" />
-            </Button>
+          <div >
+            <DeleteChakra id={id} deleteHandle={deleteHandle}/>
           </div>
           <div>
             <button
@@ -86,7 +78,9 @@ const Recent = ({
             >
              <div className="min-plus"> + </div>
             </button>
-            <span data-cy="product-quantity">{quantity}</span>
+            
+              <span className="product-quantity">{quantity}</span>
+            
             <button
               data-cy="remove-from-cart"
               className="remove-from-cart"

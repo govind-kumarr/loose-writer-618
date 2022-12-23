@@ -10,7 +10,7 @@ const AdminPage = () => {
     
   }
   return (
-    <div className="full"> AdminPage
+    <div className="full"> 
        <AddProducts/> 
       
     </div>

@@ -3,13 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
+.hide-form{
+    display: none;
+}
 .add-product-wrapper{
-    border: 0px solid green;
+    border: 2px solid green;
     text-align: center;
     width: max-content;
     align-self: center;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position:absolute;
+    top:8vh;
+    right:30vw;
+    z-index: 25;
+    height:500px;
+    overflow:auto;
+    background-color: aquamarine;
+}
+
+.right-add-icon{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border: 0px solid yellow;
 }
 .entire{
     border:0px solid red;

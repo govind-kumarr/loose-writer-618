@@ -57,10 +57,10 @@ const NavbarTop = () => {
               <Link to="/AskDoctor" className="OnlyForLaptopView" >ASK DOCTOR</Link>
             </div>
             <div>
-              <Link to="/Covid" >COVID-19</Link>
+              <Link to="/admin-login" >ADMIN-PANEL</Link>
             </div>
             <div>
-              <Link to="/Ayurveda" className="OnlyForLaptopView">AYURVEDA</Link>
+              <Link to="/Covid" className="OnlyForLaptopView">COVID-19</Link>
             </div>
           </div>
         </div>

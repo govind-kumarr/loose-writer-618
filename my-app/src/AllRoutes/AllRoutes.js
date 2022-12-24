@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Check from "../AdminSide/Check";
 import AdminPage from "../Pages/AdminPage";
 import Cart from "../Pages/Cart";
 import Error from "../Pages/Error";
@@ -18,6 +19,8 @@ const AllRoutes = () => {
         <Route path="/admin-panel" element={<AdminPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/check" element={<Check/>}/>
+        <Route path="/login-admin" element={<AdminPage/>}/>
         <Route path="*" element={<Error />} />
       </Routes>
     </>

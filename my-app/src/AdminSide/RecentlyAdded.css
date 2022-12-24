@@ -10,6 +10,19 @@
     border:0px solid blue;
     width:240px;
 }
+
+.recently-heading-div{
+    margin-top: -20px;
+    font-size: 25px;
+    font-weight: 600;
+    border: 0px solid red;
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+}
+@media (min-width:1111px){
+    
+}
 @media (max-width:599px){
     .style1{
         border: 0px solid blueviolet;
@@ -34,6 +47,9 @@
         border:0px solid yellow;
         width:90%;
         margin: auto;
+    }
+    .recently-heading-div{
+        padding-left: 30px;
     }
 }
 @media (min-width:851px) and (max-width:1100px){

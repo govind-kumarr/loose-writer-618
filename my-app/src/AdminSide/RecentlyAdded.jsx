@@ -15,9 +15,9 @@ const RecentlyAdded = () => {
 
   return (
     <div >
-      <div >
-        <Heading>Recently Added</Heading>
-        <br />
+      <div className="recently-heading-div">
+        <div>Recently Added</div>
+        
       </div>
       <br />
       <div className="style1">

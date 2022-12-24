@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "../Redux/AdminPanel/action";
-import { Heading, Button } from "@chakra-ui/react";
+import { Heading, Button,Box,Spinner } from "@chakra-ui/react";
 import Recent from "./Recent";
 import InputSearch from "./InputSearch";
 import "./Check.css";
@@ -17,7 +17,7 @@ const Check = () => {
   const checkIsLoading = useSelector((store) => store.AdminReducer.isLoading);
   const checkIsError = useSelector((store) => store.AdminReducer.isError);
   const dispatch = useDispatch();
-  const ref = useRef(null);
+  
   const [searchParams] = useSearchParams();
   const location = useLocation();
 
@@ -90,11 +90,25 @@ const Check = () => {
       }
     }
 
-    ref.current.scrollIntoView();
+    window.scrollTo(0,0)
   }, [location.search]);
+  
+ 
 
   if (checkIsLoading) {
-    return <Heading>...Loading...</Heading>;
+      
+    return (
+      <Box>
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="#ff6347"
+          size="xl"
+        />
+        <Heading>..Loading..</Heading>
+      </Box>
+    );
   }
   if (checkIsError) {
     return <Heading>.. OOps something went wrong with API ..</Heading>;
@@ -139,7 +153,7 @@ const Check = () => {
   return (
     <div>
       <br />
-      <Heading ref={ref}>All the Products</Heading>
+      <Heading >All the Products</Heading>
       <br />
       <InputSearch handleSearch={handleSearch} />
       <div className="sorting">
@@ -225,7 +239,7 @@ const Check = () => {
       <div>
         <Button
           backgroundColor={"aqua"}
-          onClick={() => ref.current.scrollIntoView()}
+          onClick={() => window.scrollTo(0,0)}
         >
           Go To Top{" "}
         </Button>

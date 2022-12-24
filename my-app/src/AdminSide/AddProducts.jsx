@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct, getProducts } from "../Redux/AdminPanel/action";
 import { getLocalData, saveData } from "../Utils/localStorageData";
 import { Link } from "react-router-dom";
-import { Button, Heading } from "@chakra-ui/react";
+import { Button, Heading,Spinner,Box } from "@chakra-ui/react";
 import axios from "axios";
 import { BasicUsage } from "./Basic";
 import { BasicAdded } from "./BasicAdded";
@@ -16,6 +16,8 @@ import RightAddIcon from "./Admin-Components/RightAddIcon";
 import Admin_Table from "./Admin-Components/Admin_Table";
 import Statistcs from "./Admin-Components/Statistcs";
 
+
+// This is Data kept in Add Product form 
 const startData = {
   title: "x",
   subTitle: "y",
@@ -30,30 +32,30 @@ const startData = {
   quantity: "5",
   max_unit: "5",
 };
+
+// This is AddProducts Component Starts here
+
 const AddProducts = () => {
+
   const [data, setData] = useState(startData);
-  const {
-    title,
-    subTitle,
-    price,
-    category,
-    type,
-    image,
-    rate,
-    count,
-    off,
-    quantity,
-    max_unit,
-  } = data;
+
+// Destructuring the data from 'data' useState
+  const { title, subTitle, price, category, type, image, rate, count, off, quantity, max_unit} = data;
+
+// Dispatch is to send the get Products request function to store using the middleware thunk;
   const dispatch = useDispatch();
-  const produ =
-    useSelector((store) => {
+
+// This useSelector takes the products from redux store ;
+  const produ =useSelector((store) => {
       //console.log(store, "store");
       return store.AdminReducer.products;
     }) || [];
+// Products gets stored in produ variable
+
   const isLoading = useSelector((store) => store.AdminReducer.isLoading);
   const isError = useSelector((store) => store.AdminReducer.isError);
 
+// This alert related to submiting the 'Add Product' form 
   const [allert, setallert] = useState(false);
   const [alert0, setAlert0] = useState(false);
 
@@ -66,7 +68,7 @@ const AddProducts = () => {
     dispatch(getProducts()).then((r) => {
       
     });
-
+    window.scrollTo(0,0)
   }, []);
 
   const handleChange = (e) => {
@@ -80,20 +82,8 @@ const AddProducts = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (
-      title &&
-      subTitle &&
-      price &&
-      category &&
-      type &&
-      image &&
-      rate &&
-      count &&
-      off &&
-      quantity &&
-      max_unit
-    ) {
+    // This is for form Validation
+    if ( title && subTitle && price && category && type && image && rate && count && off && quantity && max_unit ) {
       dispatch(addProduct(data)).then((r) => {
         
         dispatch(getProducts()).then((r) => {
@@ -120,7 +110,16 @@ const AddProducts = () => {
   };
 
   if (isLoading) {
-    return <Heading>...Loading....</Heading>;
+    return (<Box>
+  <Spinner
+      thickness='4px'
+      speed='0.65s'
+      emptyColor='gray.200'
+      color='#ff6347'
+      size='xl'
+  />
+  <Heading>..Loading..</Heading>
+</Box>);
   }
   if (isError) {
     return <Heading>OOps API is not working now!</Heading>;

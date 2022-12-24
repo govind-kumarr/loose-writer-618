@@ -11,7 +11,7 @@ const RecentlyAdded = () => {
   // noofproducts.reverse();
  
   let x = noofproducts.length;
-  console.log(x, "length");
+  //console.log(x, "length");
 
   
 

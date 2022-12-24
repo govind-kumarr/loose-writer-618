@@ -48,7 +48,7 @@ const AddProducts = () => {
   const dispatch = useDispatch();
   const produ =
     useSelector((store) => {
-      console.log(store, "store");
+      //console.log(store, "store");
       return store.AdminReducer.products;
     }) || [];
   const isLoading = useSelector((store) => store.AdminReducer.isLoading);

@@ -23,7 +23,7 @@ const NavbarTop = () => {
   const { setvisible, setShow } = useContext(AuthContext);
   const nevigate = useNavigate();
   const { cartData, token } = useSelector((state) => {
-    return state.ProductReducer;
+    return state.AppReducer;
   });
   const dispatch = useDispatch();
 
@@ -45,6 +45,9 @@ const NavbarTop = () => {
           </div>
           <div id="tabs">
             <div>
+              <Link to="/Products">PRODUCTS</Link>
+            </div>
+            <div>
               <Link to="/">MEDICINES</Link>
             </div>
             <div>
@@ -60,8 +63,7 @@ const NavbarTop = () => {
               <Link to="/Ayurveda">AYURVEDA</Link>
             </div>
             <div>
-              <Link to="/CarePlan">CARE PLAN</Link>
-              <div className="reddiv">SAVE MORE</div>
+              <Link to="/products">PRODUCTS</Link>
             </div>
           </div>
         </div>
@@ -200,7 +202,7 @@ const NavbarTop = () => {
                     Order Summary
                   </span>
                   <span className="CartCounterPopUp__count___3cYl6">
-                    {cartData.length} Item
+                    {/* {cartData.length} Item */}
                   </span>
                 </li>
                 <li>
@@ -216,7 +218,7 @@ const NavbarTop = () => {
                 </li>
               </ul>
             </div>
-            <div className="count">{cartData.length}</div>
+            {/* <div className="count">{cartData.length}</div> */}
           </div>
           <div style={{ fontSize: "14px" }}>Need Help ?</div>
         </div>

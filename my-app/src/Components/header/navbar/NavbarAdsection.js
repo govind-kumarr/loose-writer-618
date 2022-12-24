@@ -78,9 +78,9 @@ const NavbarAdsection = () => {
       <TopSection>
         <h1>Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform</h1>
       </TopSection>
-      <BottomSection>
+      {/* <BottomSection>
         <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1647251796/ueyxzzku83yuvpqxyrwe.png" />
-      </BottomSection>
+      </BottomSection> */}
     </>
   );
 };

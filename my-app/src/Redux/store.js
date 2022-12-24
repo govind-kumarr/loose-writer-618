@@ -1,9 +1,14 @@
-import { combineReducers, legacy_createStore } from "redux";
+import {legacy_createStore, applyMiddleware, compose, combineReducers  } from "redux" 
+import thunk from "redux-thunk"
 import { reducer as AuthReducer } from "./AuthReducer/reducer";
-import { reducer as ProductReducer } from "./reducer.js";
+import {reducer as AppReducer} from "./AppReducer/reducer"
 
-const rootReducer = combineReducers({ AuthReducer, ProductReducer });
+const rootReducer = combineReducers({ AppReducer, AuthReducer });
 
-const store = legacy_createStore(rootReducer);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = legacy_createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(thunk)) );
 
 export { store };

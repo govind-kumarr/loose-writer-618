@@ -10,7 +10,7 @@ const Navbar = () => {
       <NavbarTop />
       <SearchBar />
       <Navbar_Bottom />
-      <NavbarAdsection />
+      {/* <NavbarAdsection /> */}
     </>
   );
 };

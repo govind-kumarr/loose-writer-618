@@ -9,7 +9,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 const Navbar_Bottom = () => {
   return (
     <Wrapper>
-      <div className="dropdown_div">
+      <div className="dropdown_div OnlyForLaptopView">
         <ul>
           <li>
             <Link to="/Products">
@@ -770,6 +770,16 @@ const Wrapper = styled.div`
     font-weight: 400 !important;
     color: #757575 !important;
   }
+
+
+  @media screen and (max-width: 800px) {
+    .OnlyForLaptopView {
+      display:none;
+    }
+  }
+
+
+
 `;
 
 export default Navbar_Bottom;

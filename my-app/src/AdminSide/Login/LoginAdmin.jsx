@@ -30,13 +30,14 @@ const LoginAdmin = () => {
             <br/>
             <Input width="50%" type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='enter your email'></Input>
             <br/>
+            <br/>
             <label>Password</label>
             <br/>
             <br/>
             <Input width="50%" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='enter your password'/>
             <br/>
             <br/>
-            <Input width="50%" type="submit" backgroundColor={"teal"} placeholder='submit credentials'/>
+            <Input style={{cursor:"pointer"}}width="25%" type="submit" backgroundColor={"teal"} placeholder='submit credentials'/>
             <br/>
         </form>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import NavbarAdsection from "../Components/header/navbar/NavbarAdsection.js";
 import LastsecFooter from "../Components/LastsecFooter.jsx";
 import Ayurved from "../Productdiv/components/Ayurveda";
 import FeaturedBrand from "../Productdiv/components/FeaturedBrand";
@@ -15,6 +16,7 @@ import Trending from "./Home_products/Trending.jsx";
 const Home = () => {
   return (
     <div style={{ backgroundColor: "#f1f4f6" }}>
+    <NavbarAdsection />
       <FeaturedBrand />
       <Trending />
       <ProductDetails />

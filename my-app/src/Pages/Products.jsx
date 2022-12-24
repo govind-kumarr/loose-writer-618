@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import Filters from '../Components/Filters'
 import Pagination from '../Components/Pagination'
 import ProductsGrid from '../Components/ProductsGrid'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { getProducts } from '../Redux/AppReducer/action'
-import SmallScreenFilters from '../Components/SmallScreenFilters'
 import Sorting from '../Components/Sorting'
+import DataLoading from '../Components/DataLoading'
 
 
 export default function Products() {
@@ -67,16 +67,22 @@ export default function Products() {
               
               {/* this box contain sorting component */}
               <Box display={{ md: 'flex' }} pb="5" >
-              
+
                 {/* sorting conponent */}
                 <Sorting setSortOrder={setSortOrder} sortOrder={sortOrder} setType={setType} type={type} setCategory={setCategory} category={category} />
               </Box>
 
               {/* This component display all the products  */}
+              {/* After Data successfully loaded */}
               <ProductsGrid />
            
             </Box>
           </Flex>
+
+
+{/* show only when data is loading */}
+<DataLoading />
+
 
           {/* pagination conponent */}
           <Pagination setPage={setPage} page={page} />

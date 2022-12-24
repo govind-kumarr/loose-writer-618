@@ -32,7 +32,7 @@ const getProducts = (params = {}) => (dispatch) => {
         })
         .catch(e => {
             console.log("action.js error :-: ", e)
-            dispatch({ type: types.GET_PRODUCTS_RECORD_FAILURE })
+            dispatch({ type: types.GET_PRODUCTS_RECORD_FAILURE, payload: e.message })
         })
 }
 

@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <AllRoutes />
       {/* <LabPage /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

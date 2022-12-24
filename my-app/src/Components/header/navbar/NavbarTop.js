@@ -63,8 +63,7 @@ const NavbarTop = () => {
               <Link to="/Ayurveda">AYURVEDA</Link>
             </div>
             <div>
-              <Link to="/CarePlan">CARE PLAN</Link>
-              <div className="reddiv">SAVE MORE</div>
+              <Link to="/products">PRODUCTS</Link>
             </div>
           </div>
         </div>

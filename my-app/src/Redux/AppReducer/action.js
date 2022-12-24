@@ -10,8 +10,7 @@ const getProductsRequest = () => {
 
 const getProducts = (params = {}) => (dispatch) => {
     dispatch(getProductsRequest());
-    
-    // https://mockzilla.com/app/6eb4fa5f-f256-4cc2-beb0-938a8215e3ee/136
+
     return axios.get("https://onemgfree-api-server.onrender.com/products",
         {
             params: {
@@ -32,7 +31,7 @@ const getProducts = (params = {}) => (dispatch) => {
         })
         .catch(e => {
             console.log("action.js error :-: ", e)
-            dispatch({ type: types.GET_PRODUCTS_RECORD_FAILURE, payload: e.message })
+            dispatch({ type: types.GET_PRODUCTS_RECORD_FAILURE })
         })
 }
 

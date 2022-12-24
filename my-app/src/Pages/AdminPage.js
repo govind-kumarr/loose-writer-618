@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import AddProducts from '../AdminSide/AddProducts';
+import { BasicUsage } from '../AdminSide/Basic';
+
+import "./AdminPage.css"
 
 const AdminPage = () => {
+  const handleClose=()=>{
+    
+    
+  }
   return (
-    <div></div>
+    <div className="full"> 
+       <AddProducts/> 
+      
+    </div>
   )
 }
 

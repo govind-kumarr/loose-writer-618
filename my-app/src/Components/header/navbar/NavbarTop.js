@@ -57,7 +57,7 @@ const NavbarTop = () => {
               <Link to="/AskDoctor" className="OnlyForLaptopView" >ASK DOCTOR</Link>
             </div>
             <div>
-              <Link to="/admin-login" >ADMIN-PANEL</Link>
+              <Link to="/login-admin" >ADMIN-PANEL</Link>
             </div>
             <div>
               <Link to="/Covid" className="OnlyForLaptopView">COVID-19</Link>

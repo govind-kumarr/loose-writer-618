@@ -1,0 +1,49 @@
+.container{
+    width:80%;
+    
+    border:0px solid green;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(480px,max-content));
+    gap: 20px;
+      
+}
+.main-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.main-container>div:nth-child(1){
+    width: 20%;
+}
+.sorting{
+   border:0px solid green;
+    width:98%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.sorting>div{
+    border:0px solid red;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.filter{
+    border:0px solid red;
+    margin-right: 25px;
+}
+.filter>div:nth-child(1){
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.button-topUP{
+    position:fixed;
+    top:20px;
+    left:40px;
+    z-index: 20;
+}

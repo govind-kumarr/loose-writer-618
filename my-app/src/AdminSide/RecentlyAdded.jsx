@@ -7,13 +7,11 @@ import "./RecentlyAdded.css";
 const RecentlyAdded = () => {
   const noofproducts =
     useSelector((store) => store.AdminReducer.products) || [];
-  //console.log(noofproducts, "no of products");
-  // noofproducts.reverse();
+  
  
   let x = noofproducts.length;
   //console.log(x, "length");
 
-  
 
   return (
     <div >

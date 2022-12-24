@@ -2,14 +2,14 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "../Redux/AdminPanel/action";
-import { Heading,Button } from "@chakra-ui/react";
+import { Heading, Button } from "@chakra-ui/react";
 import Recent from "./Recent";
 import InputSearch from "./InputSearch";
 import "./Check.css";
 import FilterMenu from "./FilterMenu";
 import SortRightIcon from "./Admin-Components/SortRightIcon";
 import { useSearchParams, useLocation } from "react-router-dom";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Check = () => {
@@ -22,7 +22,7 @@ const Check = () => {
   const location = useLocation();
 
   const [checkedProducts, setCheckedProducts] = useState(checkProducts);
-  const [page,setPage]=useState(1);
+  const [page, setPage] = useState(1);
 
   const CategoryNames = ["Devices", "COVID", "Diabetes", "Supplement"];
   const TypeNames = ["Box", "Packet", "Bottle", "Strip", "Jar", "Tin"];
@@ -30,7 +30,6 @@ const Check = () => {
   const searchURL = searchParams.getAll("cate");
 
   useEffect(() => {
-    
     if (location) {
       const searchURL = searchParams.getAll("cate");
       var cate;
@@ -59,7 +58,7 @@ const Check = () => {
         dispatch(getProducts(queryParams));
       } else {
         const searchURL = searchParams.getAll("cate");
-      var cate;
+        var cate;
         if (
           searchURL.includes("COVID") ||
           searchURL.includes("Devices") ||
@@ -86,7 +85,7 @@ const Check = () => {
             _order: "desc",
           },
         };
-        
+
         dispatch(getProducts(queryParams));
       }
     }
@@ -106,75 +105,99 @@ const Check = () => {
     checkProducts.sort((a, b) =>
       a.price > b.price ? 1 : b.price > a.price ? -1 : 0
     );
-    const ascProducts=[...checkProducts];
+    const ascProducts = [...checkProducts];
     setCheckedProducts(ascProducts);
-    
   };
 
   const handleDescending = () => {
     checkProducts.sort((a, b) =>
       a.price > b.price ? -1 : b.price > a.price ? 1 : 0
     );
-    const descProducts=[...checkProducts]
-    
+    const descProducts = [...checkProducts];
+
     setCheckedProducts(descProducts);
   };
   const handleRelevance = () => {
     setCheckedProducts([]);
   };
-  const handleFilter=(ind,type)=>{
+  const handleFilter = (ind, type) => {
     setCheckedProducts([]);
-  }
-  const handleSearch=()=>{
+  };
+  const handleSearch = () => {
     setCheckedProducts([]);
-  }
-  const handleHot=()=>{
+  };
+  const handleHot = () => {
     setCheckedProducts([]);
-  }
-  
-  const handlePage=(value)=>{
-    setPage(page+value)
-  }
+  };
+
+  const handlePage = (value) => {
+    setPage(page + value);
+  };
   let products2 = checkedProducts.length > 0 ? checkedProducts : checkProducts;
-  const containerStyles={}
+  const containerStyles = {};
 
   return (
     <div>
       <br />
       <Heading ref={ref}>All the Products</Heading>
       <br />
-      <InputSearch handleSearch={handleSearch}/>
-      <div  className="sorting">
-        <Link to="/admin-panel">
-          <Button style={{marginRight:"40px",width:"100%"}} backgroundColor={"aqua"}>Back To Admin-Panel</Button>
-        </Link>
-    
-        <div style={{marginRight:"10px",marginLeft:"20px"}}>Sorting By </div>
-        <SortRightIcon 
-          handleAscending={handleAscending}
-          handleDescending={handleDescending}
-          handleRelevance={handleRelevance}
-        />
+      <InputSearch handleSearch={handleSearch} />
+      <div className="sorting">
+        <div>
+          <Link to="/admin-panel">
+            <Button
+              style={{ marginRight: "40px", width: "100%" }}
+              backgroundColor={"aqua"}
+            >
+              Back To Admin-Panel
+            </Button>
+          </Link>
+        </div>
+
+        <div style={{ marginRight: "10px", marginLeft: "20px" }}>
+          Sorting By{" "}
+        </div>
+        <div>
+          <SortRightIcon
+            handleAscending={handleAscending}
+            handleDescending={handleDescending}
+            handleRelevance={handleRelevance}
+          />
+        </div>
+
         <div className="page-btn">
-          <Button disabled={page===1?true:false}onClick={()=>handlePage(-1)}>Prev</Button>
+          <Button
+            disabled={page === 1 ? true : false}
+            onClick={() => handlePage(-1)}
+          >
+            Prev
+          </Button>
           <div>{page}</div>
-          <Button onClick={()=>handlePage(1)}>Next</Button>
+          <Button onClick={() => handlePage(1)}>Next</Button>
         </div>
       </div>
       <div className="main-container">
         <div id="filter">
           <div>Filter By</div>
           <div>
-            <FilterMenu type={"category"} names={CategoryNames} handleFilter={handleFilter}/>
+            <FilterMenu
+              type={"category"}
+              names={CategoryNames}
+              handleFilter={handleFilter}
+            />
           </div>
           <div>
-            <FilterMenu type={"type"} names={TypeNames} handleFilter={handleFilter} />
+            <FilterMenu
+              type={"type"}
+              names={TypeNames}
+              handleFilter={handleFilter}
+            />
           </div>
         </div>
-        <div id="container" >
-           {products2.length > 0 &&
-            products2.map((item,index) => {
-              if(index<((page-1)*10) || index>(page*10)){
+        <div id="container">
+          {products2.length > 0 &&
+            products2.map((item, index) => {
+              if (index < (page - 1) * 10 || index > page * 10) {
                 return null;
               }
               return (
@@ -200,9 +223,14 @@ const Check = () => {
         </div>
       </div>
       <div>
-        <Button backgroundColor={"aqua"} onClick={()=>ref.current.scrollIntoView()}>Go To Top </Button>
+        <Button
+          backgroundColor={"aqua"}
+          onClick={() => ref.current.scrollIntoView()}
+        >
+          Go To Top{" "}
+        </Button>
       </div>
-      
+
       <br />
       <br />
     </div>

@@ -31,7 +31,7 @@ const addProduct=(addpayload)=>(dispatch)=>{
         //console.log(r.data,"in action add");
         return dispatch(addProductSuccess())
     }).catch(e=>{
-        console.log(e,"error");
+        //console.log(e,"error");
         dispatch(addProductFailure())
     })
 }
@@ -63,7 +63,7 @@ const getProducts=(queryParams)=>(dispatch)=>{
     
     return axios.get(`https://onemg-server-mock.onrender.com/products`,queryParams)
     .then(r=>{
-        console.log(r.data,"getProducts in action")
+        //console.log(r.data,"getProducts in action")
         return dispatch(getProductsSuccess(r.data))
     })
     .catch(e=>{
@@ -97,7 +97,7 @@ const deleteproduct=(id)=>(dispatch)=>{
     deleteProductRequest();
     return axios.delete(`https://onemg-server-mock.onrender.com/products/${id}`)
     .then((r)=>{
-        console.log(r.data,"After delete in action");
+        //console.log(r.data,"After delete in action");
         return deleteProductSuccess();
     })
     .catch(e=>{
@@ -146,7 +146,7 @@ const postProduct=(postpayload)=>{
 const simpleGet=(dispatch)=>{
     return axios.get(`https://onemg-server-mock.onrender.com/products`)
     .then(r=>{
-        console.log(r.data,"r.data")
+        //console.log(r.data,"r.data")
         dispatch({type:"simpleGETProduct",simplepayload:r.data})
     })
 }

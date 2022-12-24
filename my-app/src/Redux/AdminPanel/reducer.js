@@ -6,7 +6,7 @@ const initData={
 }
 
 const reducer=(oldState=initData,action)=>{
-    console.log(action,"action")
+   // console.log(action,"action")
     const {type,getpayload,postpayload,simplepayload}=action;
     //console.log(payload,"pyaload in reducer")
     switch(type){
@@ -26,7 +26,7 @@ const reducer=(oldState=initData,action)=>{
         // GET Request
 
         case types.GET_PRODUCTS_REQUEST:
-            console.log("request,")
+            //console.log("request,")
             return{
                 ...oldState,isLoading:true,isError:false
             }

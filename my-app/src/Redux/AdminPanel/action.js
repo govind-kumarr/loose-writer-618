@@ -130,7 +130,7 @@ const patchProduct=(id,payload)=>(dispatch)=>{
     dispatch(patchProductRequest());
     return axios.patch(`https://onemg-server-mock.onrender.com/products/${id}`,{quantity:payload})
     .then(r=>{
-        console.log(r.data,"patch data result");
+        //console.log(r.data,"patch data result");
         dispatch(patchProductSuccess());
     })
     .catch(e=>{

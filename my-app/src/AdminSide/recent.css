@@ -1,0 +1,83 @@
+.danger, .edit{
+    background-color: white;
+    border: none;
+}
+
+.add-to-cart, .remove-from-cart{
+    width:max-content;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0 5px;
+   
+}
+.add-to-cart:hover,.remove-from-cart:hover{
+    background-color: teal;
+}
+
+.card-container{
+    width:100%;
+    border:0px solid salmon;
+    box-shadow:rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    height: auto;
+    
+}
+.title{
+    width:100%;
+    margin: auto;
+    height:65px;
+    padding: 10px;
+    border: 0px solid blueviolet;
+}
+.grand-img-bottom{
+    width:100%;
+    border:0px solid green;
+    align-self: flex-end;
+    padding-bottom: 10px;
+}
+
+.img-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.img-div img{
+    width:120px;
+    height:120px;
+}
+.price-off,.category-type{
+    width:95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    padding: 5px;
+    margin: auto;
+    border:0px solid goldenrod;
+}
+.delete-edit{
+    width:95%;
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    border:0px solid red;
+}
+.min-plus{
+    width:35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border:0px solid greenyellow;
+}
+.bold{
+    font-weight: 600; 
+}
+.product-quantity{
+    font-size: 20px;
+}

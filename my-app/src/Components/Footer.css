@@ -566,3 +566,30 @@ h2.style__know-text___1bUL7 {
     width: 153px;
     height: 47px;
 }
+
+@media screen and (max-width: 800px) {
+    .OnlyForLaptopView {
+      display: none;
+    }
+
+ 
+.style__auth-bar___bYPU8 {
+    padding: 2px 6px;
+}
+
+
+.reliable {
+    width: 80px;
+    height: 90px;
+}
+.secure {
+    width: 80px;
+    height: 90px;
+}
+.afforadable {
+    width: 80px;
+    height: 90px;
+}
+
+  }
+

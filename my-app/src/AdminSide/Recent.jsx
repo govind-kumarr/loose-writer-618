@@ -23,25 +23,31 @@ const Recent = ({
   off,
   quantity,
   max_unit,
+  handleHot
 }) => {
   const dispatch = useDispatch();
 
   const deleteHandle = (id) => {
     console.log(id, "id");
     dispatch(deleteproduct(id)).then((r) => {
-      dispatch(getProducts);
+      dispatch(getProducts());
+      handleHot()
     });
   };
   const handlePlus = (id) => {
-    dispatch(patchProduct(id, quantity + 1)).then((r) => {
-      dispatch(getProducts);
+    dispatch(patchProduct(id, Number(quantity) + 1)).then((r) => {
+      dispatch(getProducts());
+      handleHot()
     });
   };
   const handleMinus = (id) => {
-    dispatch(patchProduct(id, quantity - 1)).then((r) => {
-      dispatch(getProducts);
+    
+    dispatch(patchProduct(id, Number(quantity) - 1)).then((r) => {
+      dispatch(getProducts());
+      handleHot()
     });
   };
+  
 
   return (
     <div className="card-container">

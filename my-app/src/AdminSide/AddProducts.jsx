@@ -6,16 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct, getProducts } from "../Redux/AdminPanel/action";
 import { getLocalData, saveData } from "../Utils/localStorageData";
 import { Link } from "react-router-dom";
-import {
-  Button,
-  Heading,
-} from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
 import axios from "axios";
 import { BasicUsage } from "./Basic";
 import { BasicAdded } from "./BasicAdded";
 import RecentlyAdded from "./RecentlyAdded";
 import AddProductMenu from "./AddProductMenu";
 import RightAddIcon from "./Admin-Components/RightAddIcon";
+import Admin_Table from "./Admin-Components/Admin_Table";
+import Statistcs from "./Admin-Components/Statistcs";
 
 const startData = {
   title: "x",
@@ -58,17 +57,17 @@ const AddProducts = () => {
   const [allert, setallert] = useState(false);
   const [alert0, setAlert0] = useState(false);
 
-  const [formFalse,setFormFalse]=useState(true);
+  const [formFalse, setFormFalse] = useState(true);
+  const [stats, setStats] = useState(true);
 
   //console.log("cheked")
   // console.log(produ, "products in add product")
 
   useEffect(() => {
-    console.log("1st");
     dispatch(getProducts()).then((r) => {
       console.log(r, "in useEffect get");
     });
-    console.log("2st");
+
     //axios.delete(`https://onemgfree-api-server.onrender.com/products/109`)
   }, []);
 
@@ -99,7 +98,7 @@ const AddProducts = () => {
     ) {
       dispatch(addProduct(data)).then((r) => {
         console.log(r.data, "r after add");
-        dispatch(getProducts).then((r) => {
+        dispatch(getProducts()).then((r) => {
           console.log(r.data, "after add get");
         });
       });
@@ -114,9 +113,13 @@ const AddProducts = () => {
     setAlert0(false);
     setallert(false);
   };
-  const handleForm=()=>{
-      setFormFalse(!formFalse)
-  }
+  const handleForm = () => {
+    setFormFalse(!formFalse);
+  };
+
+  const handleStatistics = () => {
+    setStats(!stats);
+  };
 
   if (isLoading) {
     return <Heading>...Loading....</Heading>;
@@ -128,50 +131,58 @@ const AddProducts = () => {
   return (
     <div className="entire">
       <Heading>Admin Panel</Heading>
-      <Top>
-        <TopDiv style={{ display: "flex", position: "relative" }}>
-          <NoOfProducts>Total No of Products :-</NoOfProducts>
-          <div data-cy="navbar-cart-count" className="navbar-cart-count">
-            {produ.length}
-          </div>
-          <Link to="/cart">
-            <img
-              data-cy="cart-image-link"
-              src="./shopping-cart.png"
-              alt="cart"
-              width="30px"
-            />
-          </Link>
-        </TopDiv>
-      </Top>
-      <br />
-      <div className="right-add-icon">
-          <RightAddIcon handleForm={handleForm}/>
-      </div>
-      <div>
-        <div className={formFalse?"hide-form":"add-product-wrapper"}>
-          <form onSubmit={handleSubmit}>
-             <AddProductMenu handleChange={handleChange} handleForm={handleForm}  title={title} subTitle={subTitle} price={price} category={category} type={type} image={image} rate={rate} count={count} off={off} quantity={quantity} max_unit={max_unit}/> 
-          </form>
-          {alert0 ? (
-            <BasicUsage
-              handleClose={handleClose}
-              children={"Please fill all the input fields proprely"}
-            />
-          ) : (
-            ""
-          )}
-          {allert ? <BasicAdded handleClose={handleClose} /> : ""}
+      <div className="whole-container">
+        <div className="left-side-table">
+          <Admin_Table
+            handleForm={handleForm}
+            handleStatistics={handleStatistics}
+          />
         </div>
-        <br />
-        <RecentlyAdded />
+        <div className="show-right-side">
+          <div className={stats?"hide-stats":"show-stats"}>
+            <Statistcs produ_length={produ.length} />
+          </div>
+          <br />
+
+          <div>
+            <div className={formFalse ? "hide-form" : "add-product-wrapper"}>
+              <form onSubmit={handleSubmit}>
+                <AddProductMenu
+                  handleChange={handleChange}
+                  handleForm={handleForm}
+                  title={title}
+                  subTitle={subTitle}
+                  price={price}
+                  category={category}
+                  type={type}
+                  image={image}
+                  rate={rate}
+                  count={count}
+                  off={off}
+                  quantity={quantity}
+                  max_unit={max_unit}
+                />
+              </form>
+              {alert0 ? (
+                <BasicUsage
+                  handleClose={handleClose}
+                  children={"Please fill all the input fields proprely"}
+                />
+              ) : (
+                ""
+              )}
+              {allert ? <BasicAdded handleClose={handleClose} /> : ""}
+            </div>
+            <br />
+          </div>
+          <div>
+            <RecentlyAdded />
+          </div>
+        </div>
       </div>
     </div>
   );
 };
-
-
-
 
 // const Button = styled.button`
 //     border:1px solid blue;
@@ -180,43 +191,5 @@ const AddProducts = () => {
 //     color:blue;
 //     font-size:22px;  f
 // `
-
-const NoOfProducts = styled.div`
-  border: 0px solid green;
-  text-align: left;
-  color: green;
-  margin-right: 6px;
-  font-size: 20px;
-  @media all and (min-width: 0px) and (max-width: 481px) {
-    text-align: center;
-    align-self: center;
-  }
-  @media all and (min-width: 481px) and (max-width: 768px) {
-    text-align: center;
-  }
-`;
-
-const TopDiv = styled.div`
-border:0px solid pink;
-width:max-content;
-img{
-    margin-left:12px;
-}
-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-`;
-const Top = styled.div`
-  border: 0px solid blue;
-  margin-left: 20px;
-
-  @media all and (min-width: 0px) and (max-width: 481px) {
-    display: flex;
-    justify-content: center;
-  }
-  @media all and (min-width: 481px) and (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
-`;
 
 export default AddProducts;

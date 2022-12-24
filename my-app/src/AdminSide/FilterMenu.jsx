@@ -40,7 +40,7 @@ const FilterMenu = ({ type, names,handleFilter }) => {
         {names_filter.length > 0 &&
           names_filter.map((item, ind) => {
             return (
-              <div onClick={(e)=>handleFilter(ind,type)} style={style2}>
+              <div key={ind} onClick={(e)=>handleFilter(ind,type)} style={style2}>
                 <Checkbox defaultChecked={cate.includes(item)} onChange={handleURL} value={item}>{item}</Checkbox>
               </div>
             );

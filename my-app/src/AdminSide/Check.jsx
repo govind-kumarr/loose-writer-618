@@ -2,13 +2,14 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "../Redux/AdminPanel/action";
-import { Heading } from "@chakra-ui/react";
+import { Heading,Button } from "@chakra-ui/react";
 import Recent from "./Recent";
 import InputSearch from "./InputSearch";
 import "./Check.css";
 import FilterMenu from "./FilterMenu";
 import SortRightIcon from "./Admin-Components/SortRightIcon";
 import { useSearchParams, useLocation } from "react-router-dom";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 const Check = () => {
@@ -114,15 +115,18 @@ const Check = () => {
     checkProducts.sort((a, b) =>
       a.price > b.price ? 1 : b.price > a.price ? -1 : 0
     );
-    setCheckedProducts(checkProducts);
-    console.log(checkProducts, "sorted in asce");
+    const ascProducts=[...checkProducts];
+    setCheckedProducts(ascProducts);
+    console.log(ascProducts, "sorted in asce");
   };
 
   const handleDescending = () => {
     checkProducts.sort((a, b) =>
       a.price > b.price ? -1 : b.price > a.price ? 1 : 0
     );
-    setCheckedProducts(checkProducts);
+    const descProducts=[...checkProducts]
+    console.log(descProducts,"sorted in descending")
+    setCheckedProducts(descProducts);
   };
   const handleRelevance = () => {
     setCheckedProducts([]);
@@ -130,7 +134,13 @@ const Check = () => {
   const handleFilter=(ind,type)=>{
     setCheckedProducts([]);
   }
-
+  const handleSearch=()=>{
+    setCheckedProducts([]);
+  }
+  const handleHot=()=>{
+    setCheckedProducts([]);
+  }
+  console.log(checkedProducts,"checked Products")
   let products2 = checkedProducts.length > 0 ? checkedProducts : checkProducts;
 
   return (
@@ -138,14 +148,17 @@ const Check = () => {
       <br />
       <Heading ref={ref}>All the Products</Heading>
       <br />
-      <InputSearch />
+      <InputSearch handleSearch={handleSearch}/>
       <div className="sorting">
+        <Link to="/admin-panel"><Button backgroundColor={"aqua"}>Back To Admin-Panel</Button></Link>
+        
         <div>Sorting By </div>
         <SortRightIcon
           handleAscending={handleAscending}
           handleDescending={handleDescending}
           handleRelevance={handleRelevance}
         />
+        
       </div>
       <div className="main-container">
         <div className="filter">
@@ -175,11 +188,18 @@ const Check = () => {
                     off={item.off}
                     quantity={item.quantity}
                     max_unit={item.max_unit}
+                    handleHot={handleHot}
                   />
                 </div>
               );
             })}
         </div>
+      </div>
+      <div>
+        <Button backgroundColor={"aqua"} onClick={()=>ref.current.scrollIntoView()}>Go To Top </Button>
+      </div>
+      <div className="button-topUP">
+      <Button backgroundColor={"teal"} onClick={()=>ref.current.scrollIntoView()}>Go To Top </Button>
       </div>
       <br />
       <br />

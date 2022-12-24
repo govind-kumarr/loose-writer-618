@@ -49,4 +49,25 @@
     
 }
 
+.whole-container{
+    width:100%;
+    border:1px solid yellow;
+    display: flex;
+    margin-bottom: 20px;
+}
+.left-side-table{
+    width: 25%;
+    border:1px solid brown;
+}
+.show-right-side{
+    width: 100%;
+    border:1px solid green;
+}
+
+.hide-stats{
+    display: none;
+}
+.show-stats{
+    display: block;
+}
 

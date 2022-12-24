@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, postProduct, simpleGet } from '../Redux/AdminPanel/action';
 import { getLocalData, saveData } from '../Utils/localStorageData';
 
-const InputSearch = () => {
+const InputSearch = ({handleSearch}) => {
     const inputProducts = useSelector(store => store.AdminReducer.products);
     const dispatch = useDispatch();
     const [text, setText] = useState("");
 
     useEffect(()=>{
+        
         const geti=getLocalData("productdata")||[];
         if(geti.length===0){
             saveData("productdata", inputProducts);
@@ -20,7 +21,7 @@ const InputSearch = () => {
     const handleInput = (val) => {
         setText(val);
         console.log(val, "values");
-
+        handleSearch("2");
         const stor=getLocalData("productdata")||inputProducts;
         console.log(stor,"stor")
         const filtered = stor.filter((item) => (item.title).includes(val));

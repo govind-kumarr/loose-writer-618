@@ -51,8 +51,9 @@
 
 .whole-container{
     width:100%;
-    border:1px solid yellow;
+    border:0px solid yellow;
     display: flex;
+    gap:20px;
     margin-bottom: 20px;
 }
 .left-side-table{
@@ -95,7 +96,7 @@
     }
 }
 
-@media (min-width:600px) and (max-width:880px) {
+@media (min-width:600px) and (max-width:1050px) {
     .whole-container{
         display: flex;
         flex-direction: column;

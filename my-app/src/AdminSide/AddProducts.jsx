@@ -172,7 +172,6 @@ const AddProducts = () => {
               )}
               {allert ? <BasicAdded handleClose={handleClose} /> : ""}
             </div>
-            <br />
           </div>
           <div>
              <RecentlyAdded /> 

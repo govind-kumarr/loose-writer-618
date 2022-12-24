@@ -13,14 +13,11 @@ const RecentlyAdded = () => {
   let x = noofproducts.length;
   console.log(x, "length");
 
-  const style={border:"1px solid blue",width:"100%",display:"flex",justifyContent:"space-around",gap:"10px"}
-  const style1={border:"0px solid lightblue",width:"100%"}
-  const style3={border:"1px solid red",width:"240px"}
+  
 
   return (
-    <div  style={style1}>
+    <div >
       <div >
-        
         <Heading>Recently Added</Heading>
         <br />
       </div>

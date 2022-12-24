@@ -1,5 +1,5 @@
 .style1{
-    border:1px solid red;
+    border:0px solid red;
     width:100%;
     display: flex;
     justify-content: space-around;
@@ -7,30 +7,45 @@
 }
 
 .style2{
-    border:1px solid blue;
+    border:0px solid blue;
     width:240px;
 }
 @media (max-width:599px){
     .style1{
-        border: 1px solid blueviolet;
+        border: 0px solid blueviolet;
+        width:100%;
+        margin: auto;
         display: flex;
         flex-direction: column;
     }
     .style2{
-        border:1px solid yellow;
+        border:0px solid yellow;
         width:90%;
         margin: auto;
     }
 }
-@media (min-width:600px) and (max-width:880px){
+@media (min-width:600px) and (max-width:850px){
     .style1{
-        border: 1px solid blueviolet;
+        border: 0px solid blueviolet;
         display: flex;
         flex-direction: column;
     }
+    .style2{
+        border:0px solid yellow;
+        width:90%;
+        margin: auto;
+    }
+}
+@media (min-width:851px) and (max-width:1100px){
+    .style1{
+        border: 0px solid blueviolet;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:30px;
+    }
     
     .style2{
-        border:1px solid yellow;
+        border:0px solid yellow;
         width:90%;
         margin: auto;
     }

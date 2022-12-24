@@ -22,6 +22,7 @@ const Check = () => {
   const location = useLocation();
 
   const [checkedProducts, setCheckedProducts] = useState(checkProducts);
+  const [page,setPage]=useState(1);
 
   const CategoryNames = ["Devices", "COVID", "Diabetes", "Supplement"];
   const TypeNames = ["Box", "Packet", "Bottle", "Strip", "Jar", "Tin"];
@@ -130,8 +131,12 @@ const Check = () => {
   const handleHot=()=>{
     setCheckedProducts([]);
   }
-  console.log(checkedProducts,"checked Products")
+  
+  const handlePage=(value)=>{
+    setPage(page+value)
+  }
   let products2 = checkedProducts.length > 0 ? checkedProducts : checkProducts;
+  const containerStyles={}
 
   return (
     <div>
@@ -150,10 +155,14 @@ const Check = () => {
           handleDescending={handleDescending}
           handleRelevance={handleRelevance}
         />
-        
+        <div className="page-btn">
+          <Button disabled={page===1?true:false}onClick={()=>handlePage(-1)}>Prev</Button>
+          <div>{page}</div>
+          <Button onClick={()=>handlePage(1)}>Next</Button>
+        </div>
       </div>
       <div className="main-container">
-        <div className="filter">
+        <div id="filter">
           <div>Filter By</div>
           <div>
             <FilterMenu type={"category"} names={CategoryNames} handleFilter={handleFilter}/>
@@ -162,9 +171,12 @@ const Check = () => {
             <FilterMenu type={"type"} names={TypeNames} handleFilter={handleFilter} />
           </div>
         </div>
-        <div className="container" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)"}}>
+        <div id="container" >
            {products2.length > 0 &&
-            products2.map((item) => {
+            products2.map((item,index) => {
+              if(index<((page-1)*10) || index>(page*10)){
+                return null;
+              }
               return (
                 <div className="check-card" key={item.id}>
                   <Recent
@@ -190,9 +202,7 @@ const Check = () => {
       <div>
         <Button backgroundColor={"aqua"} onClick={()=>ref.current.scrollIntoView()}>Go To Top </Button>
       </div>
-      <div className="button-topUP">
-      <Button backgroundColor={"teal"} onClick={()=>ref.current.scrollIntoView()}>Go To Top </Button>
-      </div>
+      
       <br />
       <br />
     </div>

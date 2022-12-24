@@ -1,11 +1,9 @@
-.container{
+#container{
     width:80%;
-    
     border:0px solid green;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(480px,max-content));
-    gap: 20px;
-      
+    grid-template-columns: repeat(3,1fr);
+    gap:40px;
 }
 .main-container{
     width: 100%;
@@ -31,11 +29,11 @@
     margin-right: 20px;
 }
 
-.filter{
+#filter{
     border:0px solid red;
     margin-right: 25px;
 }
-.filter>div:nth-child(1){
+#filter>div:nth-child(1){
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -46,4 +44,85 @@
     top:20px;
     left:40px;
     z-index: 20;
+}
+.page-btn{
+    display: flex;
+    align-items: center;
+}
+.page-btn>div{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+@media(max-width:599px){
+    #container{
+        width:94%;
+        border:0px solid green;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap:20px;
+        margin: auto;
+    }
+    #filter{
+        border:0px solid red;
+        width:80%;
+        margin: auto;
+    }
+    #filter>div:nth-child(1){
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .main-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
+    .sorting{
+        border:0px solid green;
+         width:60%;
+         margin: auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+}
+
+@media(min-width:600px) and (max-width:1050px){
+    #container{
+        width:80%;
+        border:0px solid green;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:40px;
+        margin: auto;
+    }
+    #filter{
+        border:0px solid red;
+        width:80%;
+        margin: auto;
+    }
+    #filter>div:nth-child(1){
+        margin-top: 25px;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .main-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
+    .sorting{
+        border:0px solid green;
+         width:50%;
+         margin: auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
 }

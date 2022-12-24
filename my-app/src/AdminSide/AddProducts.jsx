@@ -175,7 +175,7 @@ const AddProducts = () => {
             <br />
           </div>
           <div>
-            <RecentlyAdded />
+             <RecentlyAdded /> 
           </div>
         </div>
       </div>

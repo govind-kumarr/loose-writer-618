@@ -7,8 +7,8 @@ const SearchBar = () => {
   return (
     <Wrapper>
       <div className="navbar1">
-        <div className="navbar_inner_div">
-          <div className="location_bar_innerdiv">
+        <div className="navbar_inner_div OnlyForLaptopView">
+          <div className="location_bar_innerdiv ">
             <div>
               <i
                 className="material-icons location_icon"
@@ -66,7 +66,7 @@ const SearchBar = () => {
               alt=""
             />
           </div>
-          <div className="navbar_discount">
+          <div className="navbar_discount ">
             QUICK BUY! Flat 25% off on medicines*
           </div>
           <div className="upload_btn">
@@ -199,6 +199,16 @@ const Wrapper = styled.div`
     background-color: #f1f4f6;
     display: inline;
   }
+
+  @media screen and (max-width: 800px) {
+    .OnlyForLaptopView {
+      display: none;
+    }
+    // .navbar_discount{
+    //   font-size:10px;
+    // }
+  }
+
 
 
 `;

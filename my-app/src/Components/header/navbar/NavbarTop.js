@@ -48,22 +48,19 @@ const NavbarTop = () => {
               <Link to="/Products">PRODUCTS</Link>
             </div>
             <div>
-              <Link to="/">MEDICINES</Link>
+              <Link to="/"  className="TextOnlyForSmallView OnlyForLaptopView">MEDICINES</Link>
             </div>
             <div>
-              <Link to="/LabTests">LAB TESTS</Link>
+              <Link to="/LabTests" >LAB TESTS</Link>
+            </div>
+            <div >
+              <Link to="/AskDoctor" className="OnlyForLaptopView" >ASK DOCTOR</Link>
             </div>
             <div>
-              <Link to="/AskDoctor">ASK DOCTOR</Link>
+              <Link to="/Covid" >COVID-19</Link>
             </div>
             <div>
-              <Link to="/Covid">COVID-19</Link>
-            </div>
-            <div>
-              <Link to="/Ayurveda">AYURVEDA</Link>
-            </div>
-            <div>
-              <Link to="/products">PRODUCTS</Link>
+              <Link to="/Ayurveda" className="OnlyForLaptopView">AYURVEDA</Link>
             </div>
           </div>
         </div>
@@ -188,8 +185,8 @@ const NavbarTop = () => {
               </>
             )}
           </div>
-          <div>Offers</div>
-          <div className="cart_icon">
+          <div className="OnlyForLaptopView">Offers</div>
+          <div className="cart_icon ">
             <div
               className="cart_svg"
               onClick={() => {
@@ -220,7 +217,7 @@ const NavbarTop = () => {
             </div>
             {/* <div className="count">{cartData.length}</div> */}
           </div>
-          <div style={{ fontSize: "14px" }}>Need Help ?</div>
+          <div className="OnlyForLaptopView" style={{ fontSize: "14px" }}>Need Help ?</div>
         </div>
       </div>
     </Wrapper>
@@ -255,7 +252,7 @@ const Wrapper = styled.div`
 
   #logo {
     position: relative;
-    min-height: 1px;
+    min-height: 30px;
     padding-left: 15px;
     padding-right: 15px;
     /* border: red solid; */
@@ -516,5 +513,19 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .OnlyForLaptopView {
+      display: none;
+    }
+
+    #tabs > div{
+      font-size:9px;
+      
+          }
+
+  }
+
+
 `;
 export default NavbarTop;

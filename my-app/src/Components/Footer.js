@@ -9,10 +9,10 @@ const Footer = () => {
       class="style__footer-container___1uRLj style__black-color___MucSg style__f14___1FE-V"
     >
       <div class="style__top-bar___5ZPPN">
-        <div class="style__top-head___2h8g-">
+        <div class="style__top-head___2h8g- OnlyForLaptopView">
           <h2>INDIA’S LARGEST HEALTHCARE PLATFORM</h2>
         </div>
-        <div class="style__flex-box____V1Y1 style__stats-bar___w397H">
+        <div class="style__flex-box____V1Y1 style__stats-bar___w397H OnlyForLaptopView">
           <div>
             <div class="style__stats-num___3Ns_4">260m+</div>
             <div class="style__stats-text___DUvDf">Visitors</div>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div class="style__border-btm___1wdot"></div>
         <div class="style__flex-box____V1Y1 style__down-bar___3FV6g">
-          <div class="style__free-text___3jZ7n style__f20___2opYM">
+          <div class="style__free-text___3jZ7n style__f20___2opYM OnlyForLaptopView">
             Get the link to download App
           </div>
           <div class="style__input-box___7akGm">
@@ -107,7 +107,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div class="style__main-content___2sd49">
+        <div class="style__main-content___2sd49 OnlyForLaptopView" >
           <div>
             <h3 class="style__f16___7B4eA style__fweight500___oy16u">
               Our Services
@@ -138,7 +138,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div class="style__main-content___2sd49">
+        <div class="style__main-content___2sd49 OnlyForLaptopView">
           <div>
             <h3 class="style__f16___7B4eA style__fweight500___oy16u">
               Connect
@@ -189,7 +189,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div class="style__main-content___2sd49">
+        <div class="style__main-content___2sd49 OnlyForLaptopView">
           <div>
             <h5>Download App</h5>
             <ul>
@@ -210,8 +210,8 @@ const Footer = () => {
       </div>
       <div class="style__auth-bar___bYPU8">
         <div class="style__auth-cont___2vf7G">
-          <div class="reliable"></div>
-          <div class="style__details-wrapper___3X0Wt">
+          <div class="reliable "></div>
+          <div class="style__details-wrapper___3X0Wt OnlyForLaptopView">
             <h5 class="style__f18___1g_my">Reliable</h5>
             <p class="style__f12___3AbTH style__grey-txt___2FAow">
               All products displayed on Tata 1mg are procured from verified
@@ -222,7 +222,7 @@ const Footer = () => {
         </div>
         <div class="style__auth-cont___2vf7G">
           <div class="secure"></div>
-          <div class="style__details-wrapper___3X0Wt">
+          <div class="style__details-wrapper___3X0Wt OnlyForLaptopView">
             <h5 class="style__f18___1g_my">Secure</h5>
             <p class="style__f12___3AbTH style__grey-txt___2FAow">
               Tata 1mg uses Secure Sockets Layer (SSL) 128-bit encryption and
@@ -233,7 +233,7 @@ const Footer = () => {
         </div>
         <div class="style__auth-cont___2vf7G">
           <div class="affordable"></div>
-          <div class="style__details-wrapper___3X0Wt">
+          <div class="style__details-wrapper___3X0Wt OnlyForLaptopView">
             <h5 class="style__f18___1g_my">Affordable</h5>
             <p class="style__f12___3AbTH style__grey-txt___2FAow">
               Find affordable medicine substitutes, save up to 50% on health
@@ -265,12 +265,12 @@ const Footer = () => {
 
 
         </div>
-        <div class="style__free-text3___3upNE">
+        <div class="style__free-text3___3upNE OnlyForLaptopView">
           India's only LegitScript and ISO/ IEC 27001 certified online
           healthcare platform
         </div>
       </div>
-      <div class="style__collapse___1sCdv">
+      <div class="style__collapse___1sCdv OnlyForLaptopView">
         <div class="style__f-head___2SFeL">
           <h2 class="style__know-text___1bUL7">
             Know more about Tata 1mg<span
@@ -288,7 +288,7 @@ const Footer = () => {
         
 
 
-      <div class="style__flex-box____V1Y1 style__b-text___uV-wn">
+      <div class="style__flex-box____V1Y1 style__b-text___uV-wn OnlyForLaptopView">
         <div>
           <div class="style__copyright___qclAW">
             © 2022 Tata 1mg. All rights reserved. In compliance with Drugs and

@@ -229,9 +229,8 @@ const NavbarTop = () => {
 };
 
 const Wrapper = styled.div`
-  min-width: 1241px;
-
-  > * {
+  
+ * {
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
@@ -252,6 +251,8 @@ const Wrapper = styled.div`
     /* border: red solid; */
     height: fit-content;
   }
+
+
 
   #logo {
     position: relative;

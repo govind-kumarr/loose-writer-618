@@ -96,6 +96,7 @@ const Wrapper = styled.div`
     background: #ffffff;
   }
 
+  
   .navbar_inner_div {
     display: flex;
     justify-content: center;
@@ -159,8 +160,10 @@ const Wrapper = styled.div`
 
   .search_bar {
     padding: 6px 13px 6px 1px;
-    width: 75%;
+    width: 55%;
   }
+
+
 
   .search_bar_innerdiv {
     width: 500px;
@@ -196,5 +199,7 @@ const Wrapper = styled.div`
     background-color: #f1f4f6;
     display: inline;
   }
+
+
 `;
 export default SearchBar;
